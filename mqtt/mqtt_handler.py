@@ -1,16 +1,11 @@
 import json
 
 import paho.mqtt.client as mqtt
-from flask import Flask, url_for
-from paho.mqtt.client import Client
 
 import config_parser
-from mqtt.mqtt_state import MqttState
 from payloads.discovery import make_discovery_message
 
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
-
-MQTT_STATE = MqttState('stopped')
 
 class Mqtt:
     def __init__(self):

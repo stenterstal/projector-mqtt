@@ -24,8 +24,10 @@
             </li>
         </ul>
         <div class="container mb-3 p-5 border-bottom border-start border-end">
-            <p>This is the dashboard</p>
-            <a class="btn btn-primary" href="/projector/turn_on" role="button">Turn on projector</a>
+            <h3 class="pb-1">Projector</h3>
+            <a class="btn {{"btn-primary" if projector_state == "stopped" else "btn-danger"}}" href="/projector/toggle" role="button">
+                {{"Turn on" if projector_state == "stopped" else "Turn off"}}
+            </a>
         </div>
     </div>
 

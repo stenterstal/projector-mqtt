@@ -1,27 +1,27 @@
 import subprocess
 
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, g
 
 from config_parser import write_config, read_config
 from mqtt.mqtt_handler import Mqtt
+from projector.projector import Projector
 
 app = Flask(__name__)
+
+projector = Projector()
+
 mqtt = Mqtt()
 
 app.secret_key = "9@jhqLMTf0KKqSS%p_cAN~dG'%(fzQZV%ex1o)&BQ*hHe08g!p&ByQng3t~_QoB"
 
 @app.route("/")
 def page_dashboard():
-    return render_template('index.html')
+    projector_state = projector.state
+    return render_template('index.html', projector_state=projector_state)
 
-@app.route("/projector/turn_on")
-def projector_turn_on():
-    print("turn on !")
-    bash_command = "echo 1 > /sys/class/gpio/gpio48/value"
-    process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
-    output, error = process.communicate()
-    print(output)
-    print(error)
+@app.route("/projector/toggle")
+def projector_toggle():
+    projector.toggle()
     return redirect('/')
 
 @app.route("/mqtt")
