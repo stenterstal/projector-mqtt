@@ -5,9 +5,12 @@ from flask import Flask, url_for
 from paho.mqtt.client import Client
 
 import config_parser
+from mqtt.mqtt_state import MqttState
 from payloads.discovery import make_discovery_message
 
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
+
+MQTT_STATE = MqttState('stopped')
 
 class Mqtt:
     def __init__(self):
@@ -18,6 +21,7 @@ class Mqtt:
 
         self.mqttc.username_pw_set(self.config["mqtt_user"], self.config["mqtt_password"])
 
+    def start(self):
         self.mqttc.connect(self.config["mqtt_address"], int(self.config["mqtt_port"]), 60)
 
         self.mqttc.loop_start()
