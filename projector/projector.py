@@ -1,6 +1,9 @@
 import subprocess
 from enum import Enum
 
+from lightcrafter.dpp2607 import *
+from lightcrafter.constants import SlaveAddr, IODebug
+
 
 class ProjectorState(str, Enum):
     stopped = 'stopped'
@@ -31,16 +34,15 @@ class Projector:
             print("[PROJ] Something went wrong trying to turn on projector")
         return False
 
-    def turn_off(self) -> bool:
-        if self.state == ProjectorState.running:
-            process = subprocess.Popen("echo 0 > /sys/class/gpio/gpio48/value", stdout=subprocess.PIPE, shell=True)
-            output, error = process.communicate()
-            if not error:
-                self.state = ProjectorState('stopped')
-                print("[PROJ] Turned off")
-                return True
-            print("[PROJ] Something went wrong trying to turn off projector")
-        return False
+    def turn_off(self):
+        DPP2607_Open()
+        DPP2607_SetSlaveAddr(SlaveAddr)
+        DPP2607_SetIODebug(IODebug)
+        DPP2607_Write_LedCurrentRed(0)
+        DPP2607_Write_LedCurrentGreen(0)
+        DPP2607_Write_LedCurrentBlue(0)
+        DPP2607_Write_PropagateLedCurrents(1)
+        DPP2607_Close()
 
     def __getstate__(self) -> ProjectorState:
         return self.state
