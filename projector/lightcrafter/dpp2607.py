@@ -40,9 +40,9 @@ Python Interface to DLP DPP2607
 """
 import time
 import struct
-from enum import IntEnum
+from projector.lightcrafter.enum import IntEnum
 from logging import log, DEBUG
-import i2c
+import projector.lightcrafter.i2c as i2c
 COMPOUND_CMD_TIMEOUT = 2.0  # seconds
 
 #####################################################

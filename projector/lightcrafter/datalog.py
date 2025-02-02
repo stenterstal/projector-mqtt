@@ -137,8 +137,8 @@ class DataLog(object):
                 os.remove(self.header_file_name)
                 os.remove(self.data_file_name)
             except IOError:
-                print "Error in Logger#close_logging(). Do you already have the log file open?"
-                print "Failed to close data logging."
+                print("Error in Logger#close_logging(). Do you already have the log file open?")
+                print("Failed to close data logging.")
                 raise
 
     def __add_col_header(self, col_header):
