@@ -70,7 +70,7 @@ class LinuxI2C(object):
 
     def write(self, data):
         if self.fd > 0:
-            wrbuff = str(bytearray(data))
+            wrbuff = bytes(bytearray(data))
             if os.write(self.fd, wrbuff) < 0:
                 raise IOError('cannot write to I2C interface')
         else:
