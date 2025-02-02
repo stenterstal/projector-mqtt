@@ -1,48 +1,27 @@
-import subprocess
+import threading
+import time
 
-from flask import Flask, render_template, request, redirect, url_for, session, g
+import flask
 
-from config_parser import write_config, read_config
-from mqtt.mqtt_handler import Mqtt
-from projector.projector import Projector
-
-app = Flask(__name__)
-
-projector = Projector()
-
-mqtt = Mqtt()
-
-app.secret_key = "9@jhqLMTf0KKqSS%p_cAN~dG'%(fzQZV%ex1o)&BQ*hHe08g!p&ByQng3t~_QoB"
-
-@app.route("/")
-def page_dashboard():
-    projector_state = projector.state
-    return render_template('index.html', projector_state=projector_state)
-
-@app.route("/projector/toggle")
-def projector_toggle():
-    projector.toggle()
-    return redirect('/')
-
-@app.route("/mqtt")
-def page_mqtt():
-    data = read_config()
-    status = None
-    if 'status' in session.keys():
-        status = session['status']
-        session.pop('status')
-    return render_template('mqtt.html', data=data, status=status)
+from dashboard.flask import app
+from mqtt.mqtt import Mqtt
 
 
-@app.route("/config", methods=['POST'])
-def config():
-    data = {
-        'mqtt_address': request.form['mqtt_address'],
-        'mqtt_port': request.form['mqtt_port'],
-        'mqtt_user': request.form['mqtt_user'],
-        'mqtt_password': request.form['mqtt_password'],
-        'mqtt_autodiscovery': 'true' if request.form.get('mqtt_autodiscovery') else 'false'
-    }
-    write_config(data)
-    session["status"] = "success_save"
-    return redirect(url_for('page_mqtt'))
+def run_flask():
+    app.run(debug=True, use_reloader=False, host="0.0.0.0", port=5000)
+
+def run_mqtt():
+    Mqtt()
+
+if __name__ == '__main__':
+    # Create threads for Flask and normal app
+    flask_thread = threading.Thread(target=run_flask)
+    normal_thread = threading.Thread(target=run_mqtt)
+
+    # Start both threads
+    flask_thread.start()
+    normal_thread.start()
+
+    # Wait for both threads to finish
+    flask_thread.join()
+    normal_thread.join()

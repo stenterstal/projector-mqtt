@@ -2,24 +2,26 @@ import json
 
 import paho.mqtt.client as mqtt
 
-import config_parser
+from config import config_parser
 from payloads.discovery import make_discovery_message
+from projector.projector import Projector
 
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
 
 class Mqtt:
     def __init__(self):
         self.config = config_parser.read_config()
+        self.projector = Projector()
+
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
         self.mqttc.on_message = self.on_message
 
         self.mqttc.username_pw_set(self.config["mqtt_user"], self.config["mqtt_password"])
 
-    def start(self):
         self.mqttc.connect(self.config["mqtt_address"], int(self.config["mqtt_port"]), 60)
 
-        self.mqttc.loop_start()
+        self.mqttc.loop_forever()
 
     def on_connect(self, client, userdata, flags, reason_code, properties):
         if reason_code != "Success":
@@ -37,7 +39,9 @@ class Mqtt:
         payload = msg.payload.decode('utf-8')
         if msg.topic == "homeassistant/switch/%s/set" % MQTT_DEVICE_ID:
             if payload == "ON":
-                print("ON!!!")
+                self.projector.turn_on()
+            elif payload == "OFF":
+                self.projector.turn_off()
 
 
     def homeassistant_discovery(self):

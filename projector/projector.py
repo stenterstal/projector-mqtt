@@ -21,7 +21,8 @@ class Projector:
 
     def turn_on(self) -> bool:
         if self.state == ProjectorState.stopped:
-            process = subprocess.Popen("echo 1 > /sys/class/gpio/gpio48/value", stdout=subprocess.PIPE, shell=True)
+            command = "echo 1 > /sys/class/gpio/gpio48/value"
+            process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
             output, error = process.communicate()
             if not error:
                 self.state = ProjectorState('running')

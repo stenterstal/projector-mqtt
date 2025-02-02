@@ -10,7 +10,7 @@ def write_config(data: dict):
     for section in sections:
         ini.set('config', section, data[section] or ' ')
 
-    ini.write(io.open('config.ini', 'w'))
+    ini.write(io.open('/config.ini', 'w'))
 
 
 def read_config():
