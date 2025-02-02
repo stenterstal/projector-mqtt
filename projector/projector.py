@@ -1,8 +1,8 @@
 import subprocess
 from enum import Enum
 
-from lightcrafter.dpp2607 import *
-from lightcrafter.constants import SlaveAddr, IODebug
+from projector.lightcrafter.dpp2607 import *
+from projector.lightcrafter.constants import SlaveAddr, IODebug
 
 
 class ProjectorState(str, Enum):
