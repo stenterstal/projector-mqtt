@@ -1,7 +1,8 @@
+from datetime import datetime
+
 from flask import Flask, render_template, request, redirect, url_for, session
 
 from config.config_parser import write_config, read_config
-from projector.projector import Projector
 
 app = Flask(__name__)
 
@@ -19,6 +20,10 @@ def page_dashboard():
 @app.route("/projector/toggle")
 def projector_toggle():
     return redirect('/')
+
+@app.route("/display")
+def display():
+    return render_template('display.html')
 
 @app.route("/config", methods=['POST'])
 def config():
