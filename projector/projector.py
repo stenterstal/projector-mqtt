@@ -26,9 +26,9 @@ class Projector:
             output, error = process.communicate()
             if not error:
                 self.state = ProjectorState('running')
-                print("[Projector] Turned on")
+                print("[PROJ] Turned on")
                 return True
-            print("[Projector] Something went wrong trying to turn on projector")
+            print("[PROJ] Something went wrong trying to turn on projector")
         return False
 
     def turn_off(self) -> bool:
@@ -37,9 +37,9 @@ class Projector:
             output, error = process.communicate()
             if not error:
                 self.state = ProjectorState('stopped')
-                print("[Projector] Turned off")
+                print("[PROJ] Turned off")
                 return True
-            print("[Projector] Something went wrong trying to turn off projector")
+            print("[PROJ] Something went wrong trying to turn off projector")
         return False
 
     def __getstate__(self) -> ProjectorState:

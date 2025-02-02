@@ -39,8 +39,10 @@ class Mqtt:
         payload = msg.payload.decode('utf-8')
         if msg.topic == "homeassistant/switch/%s/set" % MQTT_DEVICE_ID:
             if payload == "ON":
+                print("[MQTT] Received turn on")
                 self.projector.turn_on()
             elif payload == "OFF":
+                print("[MQTT] Received turn off")
                 self.projector.turn_off()
 
 
