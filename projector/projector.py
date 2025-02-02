@@ -16,7 +16,7 @@ class Projector:
     def __init__(self):
         self.state = ProjectorState('stopped')
 
-    def toggle(self) -> bool:
+    def toggle(self):
         if self.state == ProjectorState.stopped:
             self.turn_on()
         else:
@@ -31,6 +31,7 @@ class Projector:
         DPP2607_Write_LedCurrentBlue(255)
         DPP2607_Write_PropagateLedCurrents(1)
         DPP2607_Close()
+        print('[PROJ] Set screen brightness to 255 (turn-on)')
 
     def turn_off(self):
         DPP2607_Open()
@@ -41,6 +42,7 @@ class Projector:
         DPP2607_Write_LedCurrentBlue(0)
         DPP2607_Write_PropagateLedCurrents(1)
         DPP2607_Close()
+        print('[PROJ] Set screen brightness to 0 (turn-off)')
 
     def __getstate__(self) -> ProjectorState:
         return self.state

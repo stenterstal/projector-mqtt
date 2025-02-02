@@ -17,5 +17,6 @@ def make_discovery_message(mqtt_id):
         "icon": "mdi:projector"
       }
     },
-    "command_topic": "homeassistant/switch/"+mqtt_id+"/set"
+    "command_topic": "dlp-projector/"+mqtt_id+"/set",
+    "state_topic": "dlp-projector/"+mqtt_id+"/status"
   }

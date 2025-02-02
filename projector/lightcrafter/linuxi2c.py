@@ -64,7 +64,6 @@ class LinuxI2C(object):
                 raise IOError('cannot set 7 bit I2C addressing')
             if fcntl.ioctl(self.fd, self.I2C_SLAVE, slave_address >> 1) < 0:
                 raise IOError('cannot set slave address')
-            print('set slave address:', slave_address >> 1)
         else:
             raise IOError('I2C interface is not open!')
 

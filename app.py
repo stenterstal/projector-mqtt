@@ -1,9 +1,6 @@
 import threading
-import time
 
-import flask
-
-from dashboard.flask import app
+from interface.flask import app
 from mqtt.mqtt import Mqtt
 
 
