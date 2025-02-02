@@ -527,8 +527,8 @@ def DPP2607_SetSlaveAddr(slave_addr):
 
 
 def _poll_complete():
-    deadline = time.clock() + COMPOUND_CMD_TIMEOUT
-    while time.clock() <= deadline:
+    deadline = time.perf_counter() + COMPOUND_CMD_TIMEOUT
+    while time.perf_counter() <= deadline:
         i2c.write([0x15, 0x3A])
         status = i2c.read(4)
         if status[3] == 0:
