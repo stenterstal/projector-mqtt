@@ -54,7 +54,7 @@ def initialize(slave_address=DEFAULT_SLAVE_ADDRESS, i2c_bus=DEFAULT_I2C_BUS):
         _i2c = devasys.DeVaSys(slave_address)
         _i2c.open()
     else:
-        import linuxi2c
+        import projector.lightcrafter.linuxi2c as linuxi2c
         _i2c = linuxi2c.LinuxI2C(i2c_bus, slave_address)
         _i2c.open()
     _slave_address = slave_address
