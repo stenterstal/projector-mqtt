@@ -1194,7 +1194,7 @@ def DPP2607_Read_SystemTemperature():
     _poll_complete()
     i2c.write([0x15, 0x39])
     payload = i2c.read(4)
-    compound_temp = (struct.unpack(">I", str(bytearray(payload[0:4])))[0] >> 0) & 0xffffffffL
+    compound_temp = (struct.unpack(">I", str(bytearray(payload[0:4])))[0] >> 0) & 0xffffffff
     log(DEBUG, 'DPP2607_Read_SystemTemperature: compound_temp=%r', compound_temp)
     return compound_temp
 
