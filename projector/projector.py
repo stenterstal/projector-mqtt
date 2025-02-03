@@ -8,6 +8,8 @@ from payloads.discovery import make_discovery_message
 from projector.lightcrafter.dpp2607 import *
 from projector.lightcrafter.constants import SlaveAddr, IODebug
 
+
+# Set in config file
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
 
 
@@ -49,13 +51,6 @@ class Projector:
             elif payload == "OFF":
                 self.mqtt_log.info("Received turn off")
                 self.projector_turn_off()
-
-    def homeassistant_discovery(self):
-        discovery_message = make_discovery_message(MQTT_DEVICE_ID)
-        string = json.dumps(discovery_message)
-
-        self.mqttc.publish("homeassistant/device/%s/config" % MQTT_DEVICE_ID, string, qos=1)
-        print("[MQTT] Published config to home assistant autodiscovery")
 
     def projector_turn_on(self):
         DPP2607_Open()

@@ -20,12 +20,12 @@ class Logger:
 
     def info(self, message: str):
         log_date = datetime.now().strftime("%H:%M:%S")
-        print(grey + "[" + log_date + "][" + self.prefix + "] " + message + reset)
+        print(grey + "[" + log_date + "] [" + self.prefix + "] " + message + reset)
 
     def warn(self, message: str):
         log_date = datetime.now().strftime("%H:%M:%S")
-        print(yellow + "[" + log_date + "]["+ self.prefix + "] " + message + reset)
+        print(yellow + "[" + log_date + "] ["+ self.prefix + "] " + message + reset)
 
     def error(self, message: str):
         log_date = datetime.now().strftime("%H:%M:%S")
-        print(red + "[" + log_date + "][" + self.prefix + "] " + message + reset)
+        print(red + "[" + log_date + "] [" + self.prefix + "] " + message + reset)

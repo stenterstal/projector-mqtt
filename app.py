@@ -1,6 +1,6 @@
 import threading
 
-from interface.flask import app
+from dashboard.flask import app
 from projector.projector import Projector
 
 
