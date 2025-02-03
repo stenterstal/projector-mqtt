@@ -26,7 +26,8 @@ class DashboardMqtt:
 
         self.mqttc.connect(self.config["mqtt_address"], int(self.config["mqtt_port"]), 60)
 
-        self.mqttc.loop_forever()
+        # No loop_forever as its blocking
+        self.mqttc.loop_start()
 
     def on_connect(self, client, userdata, flags, reason_code, properties):
         if reason_code != "Success":
