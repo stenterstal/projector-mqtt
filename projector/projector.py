@@ -13,7 +13,6 @@ MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
 class Projector:
     def __init__(self):
         self.config = config_parser.read_config()
-        self.projector = Projector()
 
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
