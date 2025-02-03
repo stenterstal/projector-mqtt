@@ -11,7 +11,7 @@ from payloads.discovery import make_discovery_message
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
 
 
-class Projector:
+class DashboardMqtt:
     def __init__(self):
         self.config = config_parser.read_config()
 

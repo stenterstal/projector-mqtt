@@ -3,8 +3,11 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, session
 
 from config.config_parser import write_config, read_config
+from dashboard.mqtt import DashboardMqtt
 
 app = Flask(__name__)
+
+mqtt = DashboardMqtt()
 
 app.secret_key = "9@jhqLMTf0KKqSS%p_cAN~dG'%(fzQZV%ex1o)&BQ*hHe08g!p&ByQng3t~_QoB"
 
