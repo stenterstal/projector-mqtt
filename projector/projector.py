@@ -1,13 +1,9 @@
-import json
-
 import paho.mqtt.client as mqtt
 
 from config import config_parser
 from log import Logger, LogPrefix
-from payloads.discovery import make_discovery_message
-from projector.lightcrafter.dpp2607 import *
 from projector.lightcrafter.constants import SlaveAddr, IODebug
-
+from projector.lightcrafter.dpp2607 import *
 
 # Set in config file
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
@@ -36,9 +32,6 @@ class Projector:
             self.mqtt_log.error(f"Something went wrong: Connected with result code {reason_code}")
         else:
             self.mqtt_log.info("Successfully connected")
-
-        if self.config['mqtt_autodiscovery'] == 'true':
-            self.homeassistant_discovery()
 
         client.subscribe("homeassistant/switch/%s/#" % MQTT_DEVICE_ID)
 
