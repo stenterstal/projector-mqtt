@@ -24,7 +24,7 @@ class Projector:
             self.proj_log.error("Not starting projector, config.ini incomplete")
             return
 
-        self.mqtt_id = config['homeassistant']['id']
+        self.mqtt_topic = config['homeassistant']['state_topic']
 
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
@@ -42,11 +42,11 @@ class Projector:
         else:
             self.mqtt_log.info("Successfully connected")
 
-        client.subscribe("homeassistant/switch/%s/#" % self.mqtt_id)
+        client.subscribe(self.mqtt_topic)
 
     def on_message(self, client, userdata, msg):
         payload = msg.payload.decode('utf-8')
-        if msg.topic == "homeassistant/switch/%s/set" % self.mqtt_id:
+        if msg.topic == self.mqtt_topic:
             if payload == "ON":
                 self.mqtt_log.info("Received turn on")
                 self.projector_turn_on()
