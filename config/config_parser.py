@@ -3,15 +3,13 @@ import os
 from configparser import ConfigParser
 
 
-def write_config(section: str,data: dict):
+def write_config(section: str, data: dict):
     from app import ROOT_DIR
     config = ConfigParser(defaults=None)
 
     config.read(os.path.join(ROOT_DIR, 'config.ini'))
 
-    sections = data.keys().mapping
-
-    config[section] = sections
+    config[section] = data
 
     config.write(io.open(os.path.join(ROOT_DIR, 'config.ini'), 'w'))
 
