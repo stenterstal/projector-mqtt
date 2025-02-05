@@ -13,6 +13,9 @@ class Projector:
     def __init__(self):
         config = config_parser.read_config().get('mqtt')
 
+        if config is None:
+            return
+
         # Initiate logger
         self.mqtt_log = Logger(LogPrefix.mqtt)
         self.proj_log = Logger(LogPrefix.projector)
