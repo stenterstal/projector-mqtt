@@ -10,9 +10,6 @@ from log import Logger, LogPrefix
 from projector.lightcrafter.constants import SlaveAddr, IODebug
 from projector.lightcrafter.dpp2607 import *
 
-# Set in config file
-MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
-
 class Projector:
     def __init__(self):
         # Initiate logger
@@ -26,6 +23,8 @@ class Projector:
         if len(errors) > 0:
             self.proj_log.error("Not starting projector, config.ini incomplete")
             return
+
+        self.mqtt_id = config['homeassistand']['id']
 
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
@@ -43,11 +42,11 @@ class Projector:
         else:
             self.mqtt_log.info("Successfully connected")
 
-        client.subscribe("homeassistant/switch/%s/#" % MQTT_DEVICE_ID)
+        client.subscribe("homeassistant/switch/%s/#" % self.mqtt_id)
 
     def on_message(self, client, userdata, msg):
         payload = msg.payload.decode('utf-8')
-        if msg.topic == "homeassistant/switch/%s/set" % MQTT_DEVICE_ID:
+        if msg.topic == "homeassistant/switch/%s/set" % self.mqtt_id:
             if payload == "ON":
                 self.mqtt_log.info("Received turn on")
                 self.projector_turn_on()
@@ -76,6 +75,3 @@ class Projector:
         DPP2607_Write_PropagateLedCurrents(1)
         DPP2607_Close()
         self.proj_log.info("Set screen brightness to 0 (turn-off)")
-
-if __name__ == "__main__":
-    start_config_monitoring()
