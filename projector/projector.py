@@ -11,7 +11,7 @@ MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
 
 class Projector:
     def __init__(self):
-        self.config = config_parser.read_config()
+        config = config_parser.read_config().get('mqtt')
 
         # Initiate logger
         self.mqtt_log = Logger(LogPrefix.mqtt)
@@ -21,9 +21,9 @@ class Projector:
         self.mqttc.on_connect = self.on_connect
         self.mqttc.on_message = self.on_message
 
-        self.mqttc.username_pw_set(self.config["mqtt_user"], self.config["mqtt_password"])
+        self.mqttc.username_pw_set(config["user"], config["password"])
 
-        self.mqttc.connect(self.config["mqtt_address"], int(self.config["mqtt_port"]), 60)
+        self.mqttc.connect(config["address"], int(config["port"]), 60)
 
         self.mqttc.loop_forever()
 
