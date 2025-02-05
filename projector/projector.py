@@ -24,7 +24,7 @@ class Projector:
             self.proj_log.error("Not starting projector, config.ini incomplete")
             return
 
-        self.mqtt_id = config['homeassistand']['id']
+        self.mqtt_id = config['homeassistant']['id']
 
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
