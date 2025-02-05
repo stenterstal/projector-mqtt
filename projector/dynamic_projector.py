@@ -1,7 +1,7 @@
 import os
 import time
 
-from watchdog.events import FileSystemEventHandler, DirModifiedEvent, FileModifiedEvent
+from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
 from config.config_parser import validate_config
@@ -16,7 +16,7 @@ class DynamicProjectorStarter(FileSystemEventHandler):
         self.conf_log = Logger(LogPrefix.conf)
         self.projector = Projector()
 
-    def on_modified(self, event: DirModifiedEvent | FileModifiedEvent) -> None:
+    def on_modified(self, event) -> None:
         # Don't listen on directory
         if event.is_directory:
             return
