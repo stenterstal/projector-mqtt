@@ -1,42 +1,49 @@
-from datetime import datetime
-
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for
 
 from config.config_parser import write_config, read_config
-from dashboard.mqtt import DashboardMqtt
+from dashboard.mqtt_discovery import DiscoveryMqtt
 
 app = Flask(__name__)
 
-mqtt = DashboardMqtt()
+mqtt = DiscoveryMqtt()
 
 app.secret_key = "9@jhqLMTf0KKqSS%p_cAN~dG'%(fzQZV%ex1o)&BQ*hHe08g!p&ByQng3t~_QoB"
 
 @app.route("/")
-def page_dashboard():
-    data = read_config()
-    status = None
-    if 'status' in session.keys():
-        status = session['status']
-        session.pop('status')
-    return render_template('index.html', data=data)
+def page_mqtt():
+    data = read_config().get('mqtt')
+    status = mqtt.state
+    return render_template('index.html', data=data, status=status)
 
-@app.route("/projector/toggle")
-def projector_toggle():
-    return redirect('/')
+@app.route("/homeassistant")
+def page_homeassistant():
+    data = read_config().get('homeassistant')
+    status = mqtt.state
+    return render_template('homeassistant.html', data=data, status=status)
+
+@app.route("/config/mqtt", methods=['POST'])
+def config_mqtt():
+    data = {
+        'address': request.form['address'],
+        'port': request.form['port'],
+        'user': request.form['user'],
+        'password': request.form['password'],
+    }
+    write_config("mqtt", data)
+    mqtt.start()
+    return redirect(url_for('page_mqtt'))
+
+@app.route("/publish", methods=['POST'])
+def config_homeassistant():
+    data = {
+        'id': request.form['id'],
+        'command_topic': request.form['command_topic'].replace('<id>', request.form['id']),
+        'state_topic': request.form['state_topic'].replace('<id>', request.form['id'])
+    }
+    write_config("homeassistant", data)
+    mqtt.start(publish=True)
+    return redirect(url_for('page_homeassistant'))
 
 @app.route("/display")
 def display():
     return render_template('display.html')
-
-@app.route("/config", methods=['POST'])
-def config():
-    data = {
-        'mqtt_address': request.form['mqtt_address'],
-        'mqtt_port': request.form['mqtt_port'],
-        'mqtt_user': request.form['mqtt_user'],
-        'mqtt_password': request.form['mqtt_password'],
-        'mqtt_autodiscovery': 'true' if request.form.get('mqtt_autodiscovery') else 'false'
-    }
-    write_config(data)
-    session["status"] = "success_save"
-    return redirect(url_for('page_mqtt'))

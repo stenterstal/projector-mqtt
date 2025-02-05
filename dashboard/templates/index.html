@@ -8,41 +8,55 @@
 </head>
 <body>
     <div class="col-lg-8 mx-auto p-4 py-md-5">
-        <header class="d-flex align-items-center pb-1">
+        <header class="d-flex align-items-center pb-3">
             <h1>Projector configuration</h1>
         </header>
-        <hr>
-        <h3 class="pb-2">Projector</h3>
-        <a class="btn {{"btn-primary" if projector_state == "stopped" else "btn-danger"}}" href="/projector/toggle" role="button">
-        {{"Turn on" if projector_state == "stopped" else "Turn off"}}
-        </a>
-        <hr>
-        <h3>MQTT</h3>
-        <form action="http://localhost:5000/config" method="POST" class="mb-3"
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">MQTT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/homeassistant">Homeassistant</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/wifi">WIFI</a>
+            </li>
+        </ul>
+        <form action="http://localhost:5000/config/mqtt" method="POST" class="mb-3 p-4 border-end border-start border-bottom"
               style="border-bottom-left-radius: 6px; border-bottom-right-radius: 6px">
             <div class="mb-3">
-                <label for="mqtt_address" class="form-label">MQTT Address</label>
-                <input type="text" class="form-control" name="mqtt_address" id="mqtt_address" placeholder="192.168.1.100" value="{{data.mqtt_address}}">
+                <label for="address" class="form-label">MQTT Address</label>
+                <input type="text" class="form-control" name="address" id="address" placeholder="192.168.1.100" value="{{data.address}}">
             </div>
             <div class="mb-3">
-                <label for="mqtt_port" class="form-label">MQTT Port</label>
-                <input type="text" class="form-control" name="mqtt_port" id="mqtt_port" value="{{data.mqtt_port or '1883'}}">
+                <label for="port" class="form-label">MQTT Port</label>
+                <input type="text" class="form-control" name="port" id="port" value="{{data.port or '1883'}}">
             </div>
             <div class="mb-3">
-                <label for="mqtt_user" class="form-label">MQTT User</label>
-                <input type="text" class="form-control" name="mqtt_user" id="mqtt_user" value="{{data.mqtt_user}}">
+                <label for="user" class="form-label">MQTT User</label>
+                <input type="text" class="form-control" name="user" id="user" value="{{data.user}}">
             </div>
             <div class="mb-3">
-                <label for="mqtt_password" class="form-label">MQTT Password</label>
-                <input type="password" class="form-control" name="mqtt_password" id="mqtt_password" value="{{data.mqtt_password}}">
+                <label for="password" class="form-label">MQTT Password</label>
+                <input type="password" class="form-control" name="password" id="password" value="{{data.password}}">
             </div>
-            <div class="form-check form-switch pb-1">
-                <input class="form-check-input" type="checkbox" name="mqtt_autodiscovery" id="mqtt_autodiscovery" {{ "checked" if data.mqtt_autodiscovery == 'true'}}>
-                <label class="form-check-label" for="mqtt_autodiscovery">Enable Homeassistant auto-discovery</label>
-            </div>
-            <div class="form-text" id="basic-addon4">This will push an updated config on MQTT each time something is edited, changes made in the homeassistant UI will be overwritten</div>
-            <button type="submit" class="btn btn-primary mt-4">Save</button>
+            <button type="submit" class="btn btn-primary mt-2">Test connection</button>
         </form>
+        {% if (status == 'success' or status == 'published') %}
+        <div class="alert alert-success" role="alert">
+            MQTT config is valid. Successfully connected.
+        </div>
+        {% endif %}
+        {% if status == 'unauthorized' %}
+        <div class="alert alert-danger" role="alert">
+            MQTT connect returns an unauthorized error
+        </div>
+        {% endif %}
+        {% if status == 'timed out' %}
+        <div class="alert alert-danger" role="alert">
+            MQTT connection timed out
+        </div>
+        {% endif %}
     </div>
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}" crossorigin="anonymous"></script>
     <script src="{{ url_for('static',filename='js/jquery.min.js') }}" crossorigin="anonymous"></script>

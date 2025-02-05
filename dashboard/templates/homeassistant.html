@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projector Configurator</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="col-lg-8 mx-auto p-4 py-md-5">
+        <header class="d-flex align-items-center pb-3">
+            <h1>Projector configuration</h1>
+        </header>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">MQTT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/homeassistant">Homeassistant</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/wifi">WIFI</a>
+            </li>
+        </ul>
+        <form action="http://localhost:5000/publish" method="POST" class="mb-3 p-4 border-end border-start border-bottom"
+              style="border-bottom-left-radius: 6px; border-bottom-right-radius: 6px">
+            <div class="mb-3">
+                <label for="id" class="form-label">Homeassistant ID</label>
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control"
+                           name="id"
+                           id="id"
+                           placeholder="Unique id"
+                           value="{{data.id}}">
+                    <button class="btn btn-outline-secondary" type="button" id="uuid-button">Generate new UUID</button>
+                </div>
+                <div class="form-text">Generating a new UUID will also make the projector show up as a new device in the homeassistant UI</div>
+            </div>
+            <div class="mb-3">
+                <label for="command_topic" class="form-label">Command Topic</label>
+                <input type="text"
+                       class="form-control"
+                       name="command_topic"
+                       id="command_topic"
+                       value="{{data.command_topic or 'dlp-projector/<id>/set'}}">
+                <div class="form-text">You can use &lt;id&gt; as a variable for Homeassistant ID</div>
+            </div>
+            <div class="mb-3">
+                <label for="state_topic" class="form-label">State Topic</label>
+                <input type="text"
+                       class="form-control"
+                       name="state_topic"
+                       id="state_topic"
+                       value="{{data.state_topic or 'dlp-projector/<id>/status'}}">
+                <div class="form-text">You can use &lt;id&gt; as a variable for Homeassistant ID</div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Publish</button>
+            <div class="form-text pt-2">Makes the projector appear in your homeassistant UI. Overrides any config set in the UI.</div>
+        </form>
+        {% if status == 'published' %}
+        <div class="alert alert-primary" role="alert">
+            Device published to homeassistant autodiscovery
+        </div>
+        {% endif %}
+        {% if status == 'publish_error' %}
+        <div class="alert alert-danger" role="alert">
+            Couldn't find Homeassistant ID when publishing to autodiscovery
+        </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}" crossorigin="anonymous"></script>
+    <script>
+        function GenerateUUID() {
+            // Generate a UUID using a random number generator provided by the browser's crypto API
+            return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+                // For each character 'c' in the UUID template, replace it with a randomly generated hexadecimal digit
+                (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+            );
+        }
+
+        // If generate UUID button is clicked we generate a new UUID
+        $('#uuid-button').on("click", function (event){
+            $('#id').val(GenerateUUID())
+        })
+
+        // If the UUID input is empty on load (new config) we fill it with a new UUID
+        $('#id').ready(function (){
+            value = $('#id').val()
+            if(value.length === 0){
+                $('#id').val(GenerateUUID())
+            }
+        })
+    </script>
+</body>
+</html>
