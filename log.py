@@ -13,6 +13,7 @@ class LogPrefix(str, Enum):
     projector = 'PROJ'
     dashboard = 'DASH'
     mqtt = 'MQTT'
+    conf = 'CONF'
 
 class Logger:
     def __init__(self, prefix: LogPrefix):

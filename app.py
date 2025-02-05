@@ -2,7 +2,7 @@ import os
 import threading
 
 from dashboard.flask import app
-from projector.projector import Projector
+from projector.dynamic_projector import DynamicProjectorLoop
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -10,7 +10,7 @@ def run_flask():
     app.run(debug=True, use_reloader=False, host="0.0.0.0", port=5000)
 
 def run_projector_mqtt():
-    Projector()
+    DynamicProjectorLoop()
 
 if __name__ == '__main__':
     # Create threads for Flask and normal app

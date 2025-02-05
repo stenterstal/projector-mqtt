@@ -1,6 +1,11 @@
+import os
+
 import paho.mqtt.client as mqtt
+from watchdog.events import FileSystemEventHandler, DirModifiedEvent, FileModifiedEvent
+from watchdog.observers import Observer
 
 from config import config_parser
+from config.config_parser import validate_config
 from log import Logger, LogPrefix
 from projector.lightcrafter.constants import SlaveAddr, IODebug
 from projector.lightcrafter.dpp2607 import *
@@ -8,25 +13,27 @@ from projector.lightcrafter.dpp2607 import *
 # Set in config file
 MQTT_DEVICE_ID = "912f98b36b4f4776b785210671a78e5e"
 
-
 class Projector:
     def __init__(self):
-        config = config_parser.read_config().get('mqtt')
-
-        if config is None:
-            return
-
         # Initiate logger
         self.mqtt_log = Logger(LogPrefix.mqtt)
         self.proj_log = Logger(LogPrefix.projector)
+
+        # Read and check config
+        config = config_parser.read_config()
+
+        errors = validate_config()
+        if len(errors) > 0:
+            self.proj_log.error("Not starting projector, config.ini incomplete")
+            return
 
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
         self.mqttc.on_message = self.on_message
 
-        self.mqttc.username_pw_set(config["user"], config["password"])
+        self.mqttc.username_pw_set(config['mqtt']["user"], config['mqtt']["password"])
 
-        self.mqttc.connect(config["address"], int(config["port"]), 60)
+        self.mqttc.connect(config['mqtt']["address"], int(config['mqtt']["port"]), 60)
 
         self.mqttc.loop_forever()
 
@@ -69,3 +76,6 @@ class Projector:
         DPP2607_Write_PropagateLedCurrents(1)
         DPP2607_Close()
         self.proj_log.info("Set screen brightness to 0 (turn-off)")
+
+if __name__ == "__main__":
+    start_config_monitoring()
