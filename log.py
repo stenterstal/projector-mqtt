@@ -4,6 +4,7 @@ from enum import Enum
 
 # Colors
 grey = "\x1b[38;20m"
+light_green = "\033[1;32m"
 yellow = "\x1b[33;20m"
 red = "\x1b[31;20m"
 bold_red = "\x1b[31;1m"
@@ -21,7 +22,7 @@ class Logger:
 
     def info(self, message: str):
         log_date = datetime.now().strftime("%H:%M:%S")
-        print(grey + "[" + log_date + "] [" + self.prefix + "] " + message + reset)
+        print(light_green + "[" + log_date + "] [" + self.prefix + "] " + message + reset)
 
     def warn(self, message: str):
         log_date = datetime.now().strftime("%H:%M:%S")
