@@ -1,4 +1,4 @@
-
+// Get the disruptions from NS API for station Enschede
 getDisruption('ES')
 
 function getDisruption(fromStationCode){
@@ -16,14 +16,6 @@ function getDisruption(fromStationCode){
     })
 }
 
-// function filterDisruptions(disruptions){
-//     relevant_disruptions = disruptions.filter((disruption) => {
-//         // Get the array(s) of all the names of stations involved in the disruption
-//         stationNamesArray = disruption.titleSections;
-//
-//     })
-// }
-
 function addDisruption(disruptions){
     // Add a view for each disruption
     $.each(disruptions, function (key, disruption) {
@@ -33,4 +25,18 @@ function addDisruption(disruptions){
             addNotification(title, expectedDuration, 'disruption')
         }
     })
+}
+
+random()
+
+function random(){
+    $.ajax({
+        url: 'https://randomuser.me/api/',
+        dataType: 'json',
+        success: function(data) {
+            let title = data.results[0].email
+            let subtitle = data.results[0].phone
+            addNotification(title, subtitle)
+        }
+    });
 }
