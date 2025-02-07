@@ -2,7 +2,6 @@ html, body {
     background-color: #000 !important;
     height: 100%;
     color: #ffffff !important;
-    cursor: none !important;
 }
 
 h1 {
@@ -12,16 +11,26 @@ h1 {
     margin: 0;
 }
 
-.disruption {
+.notification {
     display: flex;
     align-items: center;
-    margin-bottom: 6px;
-    font-size: 18px;
-    p {
-        margin-bottom: 0;
-        margin-left: 12px;
+    margin-bottom: 12px;
+    .icon-container {
+        display: flex;
+        gap: 8px;
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .text {
+        margin-left: 16px;
+        p {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
         span {
-            font-size: 14px
+            font-size: 18px
         }
     }
 }
