@@ -1,0 +1,1121 @@
+[
+  {
+    "type": "WERKZAAMHEDEN",
+    "id": "6053808",
+    "title": "Hengelo - Bielefeld.",
+    "isActive": true,
+    "topic": "disruption_6053808_nl",
+    "local": true,
+    "titleSections": [
+      [
+        {
+          "type": "STATION",
+          "value": "Hengelo"
+        },
+        {
+          "type": "ICON",
+          "value": "DISRUPTION"
+        },
+        {
+          "type": "STATION",
+          "value": "Bad Bentheim"
+        },
+        {
+          "type": "STATION",
+          "value": "Bielefeld Hbf"
+        }
+      ]
+    ],
+    "registrationTime": "2025-02-07T11:31:42+0100",
+    "releaseTime": "2025-02-07T11:31:42+0100",
+    "start": "2025-02-07T11:24:47+0100",
+    "end": "2025-02-07T14:01:42+0100",
+    "phase": {
+      "id": "3",
+      "label": "Vervangend vervoer"
+    },
+    "impact": {
+      "value": 2
+    },
+    "expectedDuration": {
+      "description": "Dit duurt tot ongeveer 18:00 uur.",
+      "endTime": "2025-02-07T18:00:00+0100"
+    },
+    "publicationSections": [
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.2616653442383,
+                "lng": 6.79388904571533
+              },
+              "countryCode": "NL",
+              "name": "Hengelo",
+              "stationCode": "HGL",
+              "uicCode": "8400316"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2688903808594,
+                "lng": 6.81944465637207
+              },
+              "countryCode": "NL",
+              "name": "Hengelo Oost",
+              "stationCode": "HGLO",
+              "uicCode": "8400312"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3063888549805,
+                "lng": 6.93472242355347
+              },
+              "countryCode": "NL",
+              "name": "Oldenzaal",
+              "stationCode": "ODZ",
+              "uicCode": "8400483"
+            },
+            {
+              "coordinate": {
+                "lat": 52.309685595156,
+                "lng": 7.15853691101074
+              },
+              "countryCode": "D",
+              "name": "Bad Bentheim",
+              "stationCode": "BH",
+              "uicCode": "8021156"
+            },
+            {
+              "coordinate": {
+                "lat": 52.276299,
+                "lng": 7.434255
+              },
+              "countryCode": "D",
+              "name": "Rheine",
+              "stationCode": "RHEINE",
+              "uicCode": "8021067"
+            },
+            {
+              "coordinate": {
+                "lat": 52.272851,
+                "lng": 8.061781
+              },
+              "countryCode": "D",
+              "name": "Osnabrück Hbf",
+              "stationCode": "OSNH",
+              "uicCode": "8021025"
+            },
+            {
+              "coordinate": {
+                "lat": 52.202075,
+                "lng": 8.573876
+              },
+              "countryCode": "D",
+              "name": "Bünde (Westf)",
+              "stationCode": "BUENDE",
+              "uicCode": "8021173"
+            },
+            {
+              "coordinate": {
+                "lat": 52.029261,
+                "lng": 8.532722
+              },
+              "countryCode": "D",
+              "name": "Bielefeld Hbf",
+              "stationCode": "BIELEF",
+              "uicCode": "8013597"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "Eurobahn"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.2616653442383,
+                  "lng": 6.79388904571533
+                },
+                "countryCode": "NL",
+                "name": "Hengelo",
+                "stationCode": "HGL",
+                "uicCode": "8400316"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2688903808594,
+                  "lng": 6.81944465637207
+                },
+                "countryCode": "NL",
+                "name": "Hengelo Oost",
+                "stationCode": "HGLO",
+                "uicCode": "8400312"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3063888549805,
+                  "lng": 6.93472242355347
+                },
+                "countryCode": "NL",
+                "name": "Oldenzaal",
+                "stationCode": "ODZ",
+                "uicCode": "8400483"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.309685595156,
+                  "lng": 7.15853691101074
+                },
+                "countryCode": "D",
+                "name": "Bad Bentheim",
+                "stationCode": "BH",
+                "uicCode": "8021156"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "Eurobahn"
+            ]
+          },
+          "description": "minder stoptreinen",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NEIGHBORING_COUNTRY"
+      }
+    ],
+    "summaryAdditionalTravelTime": {
+      "label": "De extra reistijd kan oplopen tot 30 minuten.",
+      "shortLabel": "Extra reistijd tot 30 min.",
+      "maximumDurationInMinutes": 30
+    },
+    "timespans": [
+      {
+        "start": "2025-02-07T11:24:47+0100",
+        "end": "2025-02-07T14:01:42+0100",
+        "situation": {
+          "label": "Door beperkingen in de materieelinzet: tussen Hengelo en Bad Bentheim rijden er minder stoptreinen."
+        },
+        "cause": {
+          "label": "beperkingen materieel"
+        },
+        "additionalTravelTime": {
+          "label": "De extra reistijd kan oplopen tot 30 minuten.",
+          "shortLabel": "Extra reistijd tot 30 min.",
+          "maximumDurationInMinutes": 30
+        },
+        "alternativeTransport": {
+          "label": "er rijden bussen",
+          "shortLabel": "er rijden bussen"
+        },
+        "advices": []
+      }
+    ],
+    "alternativeTransportTimespans": [
+      {
+        "start": "2025-02-07T11:24:47+0100",
+        "end": "2025-02-07T14:01:42+0100",
+        "alternativeTransport": {
+          "location": [
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2616653442383,
+                  "lng": 6.79388904571533
+                },
+                "countryCode": "NL",
+                "name": "Hengelo",
+                "stationCode": "HGL",
+                "uicCode": "8400316"
+              },
+              "description": "vanaf de voorzijde van het station"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3063888549805,
+                  "lng": 6.93472242355347
+                },
+                "countryCode": "NL",
+                "name": "Oldenzaal",
+                "stationCode": "ODZ",
+                "uicCode": "8400483"
+              },
+              "description": "vanaf de voorzijde van het station"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.309685595156,
+                  "lng": 7.15853691101074
+                },
+                "countryCode": "D",
+                "name": "Bad Bentheim",
+                "stationCode": "BH",
+                "uicCode": "8021156"
+              },
+              "description": "volg de aanwijzingen op het station"
+            }
+          ],
+          "label": "Er rijden bussen tussen Hengelo, Oldenzaal en Bad Bentheim.",
+          "shortLabel": "Er rijden bussen Hengelo - Oldenzaal - Bad Bentheim."
+        }
+      }
+    ]
+  },
+  {
+    "type": "DISRUPTION",
+    "id": "6053816",
+    "title": "Amersfoort - Deventer.",
+    "isActive": true,
+    "topic": "disruption_6053816_nl",
+    "local": true,
+    "titleSections": [
+      [
+        {
+          "type": "STATION",
+          "value": "Amersfoort C."
+        },
+        {
+          "type": "ICON",
+          "value": "DISRUPTION"
+        },
+        {
+          "type": "STATION",
+          "value": "Deventer"
+        }
+      ]
+    ],
+    "registrationTime": "2025-02-07T15:38:22+0100",
+    "releaseTime": "2025-02-07T16:05:00+0100",
+    "start": "2025-02-07T14:56:39+0100",
+    "end": "2025-02-07T18:35:00+0100",
+    "phase": {
+      "id": "2",
+      "label": "Impact bekend"
+    },
+    "impact": {
+      "value": 3
+    },
+    "expectedDuration": {
+      "description": "Dit duurt tot ongeveer 16:30 uur.",
+      "endTime": "2025-02-07T16:30:00+0100"
+    },
+    "publicationSections": [
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.1538887023926,
+                "lng": 5.37055540084839
+              },
+              "countryCode": "NL",
+              "name": "Amersfoort Centraal",
+              "stationCode": "AMF",
+              "uicCode": "8400055"
+            },
+            {
+              "coordinate": {
+                "lat": 52.16652,
+                "lng": 5.45718
+              },
+              "countryCode": "NL",
+              "name": "Hoevelaken",
+              "stationCode": "HVL",
+              "uicCode": "8400490"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2091674804687,
+                "lng": 5.97027778625488
+              },
+              "countryCode": "NL",
+              "name": "Apeldoorn",
+              "stationCode": "APD",
+              "uicCode": "8400066"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2152786254883,
+                "lng": 6.00444459915161
+              },
+              "countryCode": "NL",
+              "name": "Apeldoorn Osseveld",
+              "stationCode": "APDO",
+              "uicCode": "8400229"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2377777099609,
+                "lng": 6.09861087799072
+              },
+              "countryCode": "NL",
+              "name": "Twello",
+              "stationCode": "TWL",
+              "uicCode": "8400599"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2574996948242,
+                "lng": 6.16055536270142
+              },
+              "countryCode": "NL",
+              "name": "Deventer",
+              "stationCode": "DV",
+              "uicCode": "8400173"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "NS"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.1538887023926,
+                  "lng": 5.37055540084839
+                },
+                "countryCode": "NL",
+                "name": "Amersfoort Centraal",
+                "stationCode": "AMF",
+                "uicCode": "8400055"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.16652,
+                  "lng": 5.45718
+                },
+                "countryCode": "NL",
+                "name": "Hoevelaken",
+                "stationCode": "HVL",
+                "uicCode": "8400490"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2091674804687,
+                  "lng": 5.97027778625488
+                },
+                "countryCode": "NL",
+                "name": "Apeldoorn",
+                "stationCode": "APD",
+                "uicCode": "8400066"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2152786254883,
+                  "lng": 6.00444459915161
+                },
+                "countryCode": "NL",
+                "name": "Apeldoorn Osseveld",
+                "stationCode": "APDO",
+                "uicCode": "8400229"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2377777099609,
+                  "lng": 6.09861087799072
+                },
+                "countryCode": "NL",
+                "name": "Twello",
+                "stationCode": "TWL",
+                "uicCode": "8400599"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2574996948242,
+                  "lng": 6.16055536270142
+                },
+                "countryCode": "NL",
+                "name": "Deventer",
+                "stationCode": "DV",
+                "uicCode": "8400173"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "NS"
+            ]
+          },
+          "description": "veel minder treinen",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      }
+    ],
+    "timespans": [
+      {
+        "start": "2025-02-07T14:56:39+0100",
+        "end": "2025-02-07T18:35:00+0100",
+        "situation": {
+          "label": "Door een defecte trein: tussen Amersfoort Centraal en Deventer rijden er veel minder treinen."
+        },
+        "cause": {
+          "label": "defecte trein"
+        },
+        "advices": []
+      }
+    ],
+    "alternativeTransportTimespans": []
+  },
+  {
+    "type": "DISRUPTION",
+    "id": "6053817",
+    "title": "Amersfoort - Ede-Wageningen.",
+    "isActive": true,
+    "topic": "disruption_6053817_nl",
+    "local": true,
+    "titleSections": [
+      [
+        {
+          "type": "STATION",
+          "value": "Amersfoort C."
+        },
+        {
+          "type": "ICON",
+          "value": "DISRUPTION"
+        },
+        {
+          "type": "STATION",
+          "value": "Barneveld Zuid"
+        },
+        {
+          "type": "STATION",
+          "value": "Ede-Wageningen"
+        }
+      ]
+    ],
+    "registrationTime": "2025-02-07T15:39:29+0100",
+    "releaseTime": "2025-02-07T16:05:00+0100",
+    "start": "2025-02-07T14:56:39+0100",
+    "end": "2025-02-07T18:35:00+0100",
+    "phase": {
+      "id": "2",
+      "label": "Impact bekend"
+    },
+    "impact": {
+      "value": 3
+    },
+    "expectedDuration": {
+      "description": "Dit duurt tot ongeveer 16:30 uur.",
+      "endTime": "2025-02-07T16:30:00+0100"
+    },
+    "publicationSections": [
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.1538887023926,
+                "lng": 5.37055540084839
+              },
+              "countryCode": "NL",
+              "name": "Amersfoort Centraal",
+              "stationCode": "AMF",
+              "uicCode": "8400055"
+            },
+            {
+              "coordinate": {
+                "lat": 52.16652,
+                "lng": 5.45718
+              },
+              "countryCode": "NL",
+              "name": "Hoevelaken",
+              "stationCode": "HVL",
+              "uicCode": "8400490"
+            },
+            {
+              "coordinate": {
+                "lat": 52.1613883972168,
+                "lng": 5.59805536270142
+              },
+              "countryCode": "NL",
+              "name": "Barneveld Noord",
+              "stationCode": "BNN",
+              "uicCode": "8400092"
+            },
+            {
+              "coordinate": {
+                "lat": 52.1399993896484,
+                "lng": 5.59027767181396
+              },
+              "countryCode": "NL",
+              "name": "Barneveld Centrum",
+              "stationCode": "BNC",
+              "uicCode": "8400091"
+            },
+            {
+              "coordinate": {
+                "lat": 52.128853,
+                "lng": 5.60246
+              },
+              "countryCode": "NL",
+              "name": "Barneveld Zuid",
+              "stationCode": "BNZ",
+              "uicCode": "8400115"
+            },
+            {
+              "coordinate": {
+                "lat": 52.085277557373,
+                "lng": 5.62444448471069
+              },
+              "countryCode": "NL",
+              "name": "Lunteren",
+              "stationCode": "LTN",
+              "uicCode": "8400405"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0436096191406,
+                "lng": 5.66833353042603
+              },
+              "countryCode": "NL",
+              "name": "Ede Centrum",
+              "stationCode": "EDC",
+              "uicCode": "8400201"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0277786254883,
+                "lng": 5.67305564880371
+              },
+              "countryCode": "NL",
+              "name": "Ede-Wageningen",
+              "stationCode": "ED",
+              "uicCode": "8400200"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "RRReis"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.1538887023926,
+                  "lng": 5.37055540084839
+                },
+                "countryCode": "NL",
+                "name": "Amersfoort Centraal",
+                "stationCode": "AMF",
+                "uicCode": "8400055"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.16652,
+                  "lng": 5.45718
+                },
+                "countryCode": "NL",
+                "name": "Hoevelaken",
+                "stationCode": "HVL",
+                "uicCode": "8400490"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.1613883972168,
+                  "lng": 5.59805536270142
+                },
+                "countryCode": "NL",
+                "name": "Barneveld Noord",
+                "stationCode": "BNN",
+                "uicCode": "8400092"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.1399993896484,
+                  "lng": 5.59027767181396
+                },
+                "countryCode": "NL",
+                "name": "Barneveld Centrum",
+                "stationCode": "BNC",
+                "uicCode": "8400091"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.128853,
+                  "lng": 5.60246
+                },
+                "countryCode": "NL",
+                "name": "Barneveld Zuid",
+                "stationCode": "BNZ",
+                "uicCode": "8400115"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "RRReis"
+            ]
+          },
+          "description": "veel minder treinen",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      }
+    ],
+    "timespans": [
+      {
+        "start": "2025-02-07T14:56:39+0100",
+        "end": "2025-02-07T18:35:00+0100",
+        "situation": {
+          "label": "Door een defecte trein: tussen Amersfoort Centraal en Barneveld Zuid rijden er veel minder treinen."
+        },
+        "cause": {
+          "label": "defecte trein"
+        },
+        "advices": [
+          "Naar Ede-Wageningen kan ook via Utrecht C. Extra reistijd tot 20 min."
+        ]
+      }
+    ],
+    "alternativeTransportTimespans": []
+  },
+  {
+    "type": "DISRUPTION",
+    "id": "6053818",
+    "title": "Amsterdam - Utrecht; Amsterdam - Gouda.",
+    "isActive": true,
+    "topic": "disruption_6053818_nl",
+    "local": true,
+    "titleSections": [
+      [
+        {
+          "type": "STATION",
+          "value": "Amsterdam C."
+        },
+        {
+          "type": "STATION",
+          "value": "Bijlmer ArenA"
+        },
+        {
+          "type": "ICON",
+          "value": "DISRUPTION"
+        },
+        {
+          "type": "STATION",
+          "value": "Breukelen"
+        },
+        {
+          "type": "STATION",
+          "value": "Utrecht C."
+        }
+      ],
+      [
+        {
+          "type": "STATION",
+          "value": "Amsterdam C."
+        },
+        {
+          "type": "STATION",
+          "value": "Bijlmer ArenA"
+        },
+        {
+          "type": "ICON",
+          "value": "DISRUPTION"
+        },
+        {
+          "type": "STATION",
+          "value": "Breukelen"
+        },
+        {
+          "type": "STATION",
+          "value": "Gouda"
+        }
+      ]
+    ],
+    "registrationTime": "2025-02-07T15:55:05+0100",
+    "releaseTime": "2025-02-07T15:55:05+0100",
+    "start": "2025-02-07T15:29:52+0100",
+    "end": "2025-02-07T18:25:05+0100",
+    "phase": {
+      "id": "2",
+      "label": "Impact bekend"
+    },
+    "impact": {
+      "value": 3
+    },
+    "expectedDuration": {
+      "description": "Dit duurt tot ongeveer 17:00 uur.",
+      "endTime": "2025-02-07T17:00:00+0100"
+    },
+    "publicationSections": [
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.3788871765137,
+                "lng": 4.90027761459351
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Centraal",
+              "stationCode": "ASD",
+              "uicCode": "8400058"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3605537414551,
+                "lng": 4.93111133575439
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Muiderpoort",
+              "stationCode": "ASDM",
+              "uicCode": "8400060"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3466682434082,
+                "lng": 4.91777801513672
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Amstel",
+              "stationCode": "ASA",
+              "uicCode": "8400057"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3233337402344,
+                "lng": 4.93638896942139
+              },
+              "countryCode": "NL",
+              "name": "Duivendrecht",
+              "stationCode": "DVD",
+              "uicCode": "8400194"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3122215270996,
+                "lng": 4.94694423675537
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Bijlmer ArenA",
+              "stationCode": "ASB",
+              "uicCode": "8400074"
+            },
+            {
+              "coordinate": {
+                "lat": 52.29844,
+                "lng": 4.95972
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Holendrecht",
+              "stationCode": "ASHD",
+              "uicCode": "8400231"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2785,
+                "lng": 4.977
+              },
+              "countryCode": "NL",
+              "name": "Abcoude",
+              "stationCode": "AC",
+              "uicCode": "8400047"
+            },
+            {
+              "coordinate": {
+                "lat": 52.17149,
+                "lng": 4.9906
+              },
+              "countryCode": "NL",
+              "name": "Breukelen",
+              "stationCode": "BKL",
+              "uicCode": "8400133"
+            },
+            {
+              "coordinate": {
+                "lat": 52.1352767944336,
+                "lng": 5.03361129760742
+              },
+              "countryCode": "NL",
+              "name": "Maarssen",
+              "stationCode": "MAS",
+              "uicCode": "8400419"
+            },
+            {
+              "coordinate": {
+                "lat": 52.103055,
+                "lng": 5.09
+              },
+              "countryCode": "NL",
+              "name": "Utrecht Zuilen",
+              "stationCode": "UTZL",
+              "uicCode": "8400613"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0888900756836,
+                "lng": 5.11027765274048
+              },
+              "countryCode": "NL",
+              "name": "Utrecht Centraal",
+              "stationCode": "UT",
+              "uicCode": "8400621"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "NS"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.3122215270996,
+                  "lng": 4.94694423675537
+                },
+                "countryCode": "NL",
+                "name": "Amsterdam Bijlmer ArenA",
+                "stationCode": "ASB",
+                "uicCode": "8400074"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.29844,
+                  "lng": 4.95972
+                },
+                "countryCode": "NL",
+                "name": "Amsterdam Holendrecht",
+                "stationCode": "ASHD",
+                "uicCode": "8400231"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2785,
+                  "lng": 4.977
+                },
+                "countryCode": "NL",
+                "name": "Abcoude",
+                "stationCode": "AC",
+                "uicCode": "8400047"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.17149,
+                  "lng": 4.9906
+                },
+                "countryCode": "NL",
+                "name": "Breukelen",
+                "stationCode": "BKL",
+                "uicCode": "8400133"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "NS"
+            ]
+          },
+          "description": "minder Sprinters",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      },
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.3788871765137,
+                "lng": 4.90027761459351
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Centraal",
+              "stationCode": "ASD",
+              "uicCode": "8400058"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3605537414551,
+                "lng": 4.93111133575439
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Muiderpoort",
+              "stationCode": "ASDM",
+              "uicCode": "8400060"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3466682434082,
+                "lng": 4.91777801513672
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Amstel",
+              "stationCode": "ASA",
+              "uicCode": "8400057"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3233337402344,
+                "lng": 4.93638896942139
+              },
+              "countryCode": "NL",
+              "name": "Duivendrecht",
+              "stationCode": "DVD",
+              "uicCode": "8400194"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3122215270996,
+                "lng": 4.94694423675537
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Bijlmer ArenA",
+              "stationCode": "ASB",
+              "uicCode": "8400074"
+            },
+            {
+              "coordinate": {
+                "lat": 52.29844,
+                "lng": 4.95972
+              },
+              "countryCode": "NL",
+              "name": "Amsterdam Holendrecht",
+              "stationCode": "ASHD",
+              "uicCode": "8400231"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2785,
+                "lng": 4.977
+              },
+              "countryCode": "NL",
+              "name": "Abcoude",
+              "stationCode": "AC",
+              "uicCode": "8400047"
+            },
+            {
+              "coordinate": {
+                "lat": 52.17149,
+                "lng": 4.9906
+              },
+              "countryCode": "NL",
+              "name": "Breukelen",
+              "stationCode": "BKL",
+              "uicCode": "8400133"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0849990844727,
+                "lng": 4.89361095428467
+              },
+              "countryCode": "NL",
+              "name": "Woerden",
+              "stationCode": "WD",
+              "uicCode": "8400702"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0149993896484,
+                "lng": 4.7408332824707
+              },
+              "countryCode": "NL",
+              "name": "Gouda Goverwelle",
+              "stationCode": "GDG",
+              "uicCode": "8400257"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0175018310547,
+                "lng": 4.70444440841675
+              },
+              "countryCode": "NL",
+              "name": "Gouda",
+              "stationCode": "GD",
+              "uicCode": "8400258"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "NS"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.3122215270996,
+                  "lng": 4.94694423675537
+                },
+                "countryCode": "NL",
+                "name": "Amsterdam Bijlmer ArenA",
+                "stationCode": "ASB",
+                "uicCode": "8400074"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.29844,
+                  "lng": 4.95972
+                },
+                "countryCode": "NL",
+                "name": "Amsterdam Holendrecht",
+                "stationCode": "ASHD",
+                "uicCode": "8400231"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2785,
+                  "lng": 4.977
+                },
+                "countryCode": "NL",
+                "name": "Abcoude",
+                "stationCode": "AC",
+                "uicCode": "8400047"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.17149,
+                  "lng": 4.9906
+                },
+                "countryCode": "NL",
+                "name": "Breukelen",
+                "stationCode": "BKL",
+                "uicCode": "8400133"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "NS"
+            ]
+          },
+          "description": "minder Sprinters",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      }
+    ],
+    "summaryAdditionalTravelTime": {
+      "label": "De extra reistijd kan oplopen tot 15 minuten.",
+      "shortLabel": "Extra reistijd tot 15 min.",
+      "maximumDurationInMinutes": 15
+    },
+    "timespans": [
+      {
+        "start": "2025-02-07T15:29:52+0100",
+        "end": "2025-02-07T18:25:05+0100",
+        "situation": {
+          "label": "Door een defect spoor: tussen Amsterdam Bijlmer ArenA en Breukelen rijden er minder Sprinters."
+        },
+        "cause": {
+          "label": "defect spoor"
+        },
+        "additionalTravelTime": {
+          "label": "De extra reistijd kan oplopen tot 15 minuten.",
+          "shortLabel": "Extra reistijd tot 15 min.",
+          "maximumDurationInMinutes": 15
+        },
+        "advices": []
+      }
+    ],
+    "alternativeTransportTimespans": []
+  }
+]

@@ -1,4 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
+import json
+import os
+
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 from config.config_parser import write_config, read_config
 from dashboard.mqtt_discovery import DiscoveryMqtt
@@ -47,3 +50,11 @@ def config_homeassistant():
 @app.route("/display")
 def display():
     return render_template('display.html')
+
+# FOR TESTING ONLY!
+@app.route("/disruptions")
+def disruptions():
+    from app import ROOT_DIR
+    with open(os.path.join(ROOT_DIR, 'disruptions.json'), 'r') as file:
+        data = json.load(file)  # Load the JSON content from the file
+    return jsonify(data)  # Return the JSON data as a response

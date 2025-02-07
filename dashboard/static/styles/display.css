@@ -1,12 +1,26 @@
 html, body {
     background-color: #000 !important;
     height: 100%;
+    color: #ffffff !important;
 }
 
-
 h1 {
-    color: #ffffff !important;
-    font-size: 128px !important;
+    font-size: 96px !important;
+    font-family: "JetBrains Mono", sans-serif;
     padding: 0;
     margin: 0;
+}
+
+.disruption {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 18px;
+    p {
+        margin-bottom: 0;
+        margin-left: 12px;
+        span {
+            font-size: 14px
+        }
+    }
 }
