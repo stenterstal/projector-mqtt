@@ -2,6 +2,7 @@ html, body {
     background-color: #000 !important;
     height: 100%;
     color: #ffffff !important;
+    cursor: none !important;
 }
 
 h1 {
