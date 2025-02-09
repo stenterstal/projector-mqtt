@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     color: #ffffff !important;
     opacity: 0;
-    animation: fadeInFromBelow 5s ease-out forwards;
+    animation: fadeInFromBelow 3s ease-out forwards;
 }
 
 h1 {
