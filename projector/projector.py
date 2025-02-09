@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 import paho.mqtt.client as mqtt
 from watchdog.events import FileSystemEventHandler, DirModifiedEvent, FileModifiedEvent
@@ -50,6 +51,7 @@ class Projector:
             if payload == "ON":
                 self.mqtt_log.info("Received turn on")
                 self.projector_turn_on()
+                subprocess.run(["sudo", "xdotool", "key", "ctrl+r"])
             elif payload == "OFF":
                 self.mqtt_log.info("Received turn off")
                 self.projector_turn_off()

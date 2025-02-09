@@ -267,204 +267,6 @@
   },
   {
     "type": "DISRUPTION",
-    "id": "6053816",
-    "title": "Amersfoort - Deventer.",
-    "isActive": true,
-    "topic": "disruption_6053816_nl",
-    "local": true,
-    "titleSections": [
-      [
-        {
-          "type": "STATION",
-          "value": "Amersfoort C."
-        },
-        {
-          "type": "ICON",
-          "value": "DISRUPTION"
-        },
-        {
-          "type": "STATION",
-          "value": "Deventer"
-        }
-      ]
-    ],
-    "registrationTime": "2025-02-07T15:38:22+0100",
-    "releaseTime": "2025-02-07T16:05:00+0100",
-    "start": "2025-02-07T14:56:39+0100",
-    "end": "2025-02-07T18:35:00+0100",
-    "phase": {
-      "id": "2",
-      "label": "Impact bekend"
-    },
-    "impact": {
-      "value": 3
-    },
-    "expectedDuration": {
-      "description": "Dit duurt tot ongeveer 16:30 uur.",
-      "endTime": "2025-02-07T16:30:00+0100"
-    },
-    "publicationSections": [
-      {
-        "section": {
-          "stations": [
-            {
-              "coordinate": {
-                "lat": 52.1538887023926,
-                "lng": 5.37055540084839
-              },
-              "countryCode": "NL",
-              "name": "Amersfoort Centraal",
-              "stationCode": "AMF",
-              "uicCode": "8400055"
-            },
-            {
-              "coordinate": {
-                "lat": 52.16652,
-                "lng": 5.45718
-              },
-              "countryCode": "NL",
-              "name": "Hoevelaken",
-              "stationCode": "HVL",
-              "uicCode": "8400490"
-            },
-            {
-              "coordinate": {
-                "lat": 52.2091674804687,
-                "lng": 5.97027778625488
-              },
-              "countryCode": "NL",
-              "name": "Apeldoorn",
-              "stationCode": "APD",
-              "uicCode": "8400066"
-            },
-            {
-              "coordinate": {
-                "lat": 52.2152786254883,
-                "lng": 6.00444459915161
-              },
-              "countryCode": "NL",
-              "name": "Apeldoorn Osseveld",
-              "stationCode": "APDO",
-              "uicCode": "8400229"
-            },
-            {
-              "coordinate": {
-                "lat": 52.2377777099609,
-                "lng": 6.09861087799072
-              },
-              "countryCode": "NL",
-              "name": "Twello",
-              "stationCode": "TWL",
-              "uicCode": "8400599"
-            },
-            {
-              "coordinate": {
-                "lat": 52.2574996948242,
-                "lng": 6.16055536270142
-              },
-              "countryCode": "NL",
-              "name": "Deventer",
-              "stationCode": "DV",
-              "uicCode": "8400173"
-            }
-          ],
-          "direction": "BOTH",
-          "operators": [
-            "NS"
-          ]
-        },
-        "consequence": {
-          "section": {
-            "stations": [
-              {
-                "coordinate": {
-                  "lat": 52.1538887023926,
-                  "lng": 5.37055540084839
-                },
-                "countryCode": "NL",
-                "name": "Amersfoort Centraal",
-                "stationCode": "AMF",
-                "uicCode": "8400055"
-              },
-              {
-                "coordinate": {
-                  "lat": 52.16652,
-                  "lng": 5.45718
-                },
-                "countryCode": "NL",
-                "name": "Hoevelaken",
-                "stationCode": "HVL",
-                "uicCode": "8400490"
-              },
-              {
-                "coordinate": {
-                  "lat": 52.2091674804687,
-                  "lng": 5.97027778625488
-                },
-                "countryCode": "NL",
-                "name": "Apeldoorn",
-                "stationCode": "APD",
-                "uicCode": "8400066"
-              },
-              {
-                "coordinate": {
-                  "lat": 52.2152786254883,
-                  "lng": 6.00444459915161
-                },
-                "countryCode": "NL",
-                "name": "Apeldoorn Osseveld",
-                "stationCode": "APDO",
-                "uicCode": "8400229"
-              },
-              {
-                "coordinate": {
-                  "lat": 52.2377777099609,
-                  "lng": 6.09861087799072
-                },
-                "countryCode": "NL",
-                "name": "Twello",
-                "stationCode": "TWL",
-                "uicCode": "8400599"
-              },
-              {
-                "coordinate": {
-                  "lat": 52.2574996948242,
-                  "lng": 6.16055536270142
-                },
-                "countryCode": "NL",
-                "name": "Deventer",
-                "stationCode": "DV",
-                "uicCode": "8400173"
-              }
-            ],
-            "direction": "BOTH",
-            "operators": [
-              "NS"
-            ]
-          },
-          "description": "veel minder treinen",
-          "level": "LESS_TRAINS"
-        },
-        "sectionType": "NL"
-      }
-    ],
-    "timespans": [
-      {
-        "start": "2025-02-07T14:56:39+0100",
-        "end": "2025-02-07T18:35:00+0100",
-        "situation": {
-          "label": "Door een defecte trein: tussen Amersfoort Centraal en Deventer rijden er veel minder treinen."
-        },
-        "cause": {
-          "label": "defecte trein"
-        },
-        "advices": []
-      }
-    ],
-    "alternativeTransportTimespans": []
-  },
-  {
-    "type": "DISRUPTION",
     "id": "6053817",
     "title": "Amersfoort - Ede-Wageningen.",
     "isActive": true,
@@ -676,5 +478,724 @@
       }
     ],
     "alternativeTransportTimespans": []
+  },
+  {
+    "type": "MAINTENANCE",
+    "id": "7005717",
+    "title": "Deventer - Enschede; Zwolle - Enschede.",
+    "isActive": true,
+    "local": true,
+    "titleSections": [
+      [
+        {
+          "type": "STATION",
+          "value": "Deventer"
+        },
+        {
+          "type": "ICON",
+          "value": "MAINTENANCE"
+        },
+        {
+          "type": "STATION",
+          "value": "Hengelo"
+        },
+        {
+          "type": "STATION",
+          "value": "Enschede"
+        }
+      ],
+      [
+        {
+          "type": "STATION",
+          "value": "Zwolle"
+        },
+        {
+          "type": "STATION",
+          "value": "Wierden"
+        },
+        {
+          "type": "ICON",
+          "value": "MAINTENANCE"
+        },
+        {
+          "type": "STATION",
+          "value": "Hengelo"
+        },
+        {
+          "type": "STATION",
+          "value": "Enschede"
+        }
+      ]
+    ],
+    "registrationTime": "2025-02-08T11:48:09+0100",
+    "start": "2025-02-08T01:15:00+0100",
+    "releaseTime": "2025-02-09T00:00:00+0100",
+    "end": "2025-02-10T02:00:00+0100",
+    "period": "Zaterdag 8 februari 1:15 uur t/m maandag 10 februari 2:00 uur.",
+    "impact": {
+      "value": 5
+    },
+    "publicationSections": [
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.2574996948242,
+                "lng": 6.16055536270142
+              },
+              "countryCode": "NL",
+              "name": "Deventer",
+              "stationCode": "DV",
+              "uicCode": "8400173"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2502784729004,
+                "lng": 6.21444463729858
+              },
+              "countryCode": "NL",
+              "name": "Deventer Colmschate",
+              "stationCode": "DVC",
+              "uicCode": "8400185"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2838897705078,
+                "lng": 6.42027759552002
+              },
+              "countryCode": "NL",
+              "name": "Holten",
+              "stationCode": "HON",
+              "uicCode": "8400328"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3122215270996,
+                "lng": 6.52027797698975
+              },
+              "countryCode": "NL",
+              "name": "Rijssen",
+              "stationCode": "RSN",
+              "uicCode": "8400538"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3613891601562,
+                "lng": 6.59166669845581
+              },
+              "countryCode": "NL",
+              "name": "Wierden",
+              "stationCode": "WDN",
+              "uicCode": "8400691"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3580551147461,
+                "lng": 6.65388870239258
+              },
+              "countryCode": "NL",
+              "name": "Almelo",
+              "stationCode": "AML",
+              "uicCode": "8400051"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3419456481934,
+                "lng": 6.66666650772095
+              },
+              "countryCode": "NL",
+              "name": "Almelo de Riet",
+              "stationCode": "AMRI",
+              "uicCode": "8400520"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2988891601562,
+                "lng": 6.74805545806885
+              },
+              "countryCode": "NL",
+              "name": "Borne",
+              "stationCode": "BN",
+              "uicCode": "8400124"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2616653442383,
+                "lng": 6.79388904571533
+              },
+              "countryCode": "NL",
+              "name": "Hengelo",
+              "stationCode": "HGL",
+              "uicCode": "8400316"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2374992370605,
+                "lng": 6.83888912200928
+              },
+              "countryCode": "NL",
+              "name": "Enschede Kennispark",
+              "stationCode": "ESK",
+              "uicCode": "8400221"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2224998474121,
+                "lng": 6.8899998664856
+              },
+              "countryCode": "NL",
+              "name": "Enschede",
+              "stationCode": "ES",
+              "uicCode": "8400212"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "NS"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.2574996948242,
+                  "lng": 6.16055536270142
+                },
+                "countryCode": "NL",
+                "name": "Deventer",
+                "stationCode": "DV",
+                "uicCode": "8400173"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2502784729004,
+                  "lng": 6.21444463729858
+                },
+                "countryCode": "NL",
+                "name": "Deventer Colmschate",
+                "stationCode": "DVC",
+                "uicCode": "8400185"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2838897705078,
+                  "lng": 6.42027759552002
+                },
+                "countryCode": "NL",
+                "name": "Holten",
+                "stationCode": "HON",
+                "uicCode": "8400328"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3122215270996,
+                  "lng": 6.52027797698975
+                },
+                "countryCode": "NL",
+                "name": "Rijssen",
+                "stationCode": "RSN",
+                "uicCode": "8400538"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3613891601562,
+                  "lng": 6.59166669845581
+                },
+                "countryCode": "NL",
+                "name": "Wierden",
+                "stationCode": "WDN",
+                "uicCode": "8400691"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3580551147461,
+                  "lng": 6.65388870239258
+                },
+                "countryCode": "NL",
+                "name": "Almelo",
+                "stationCode": "AML",
+                "uicCode": "8400051"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3419456481934,
+                  "lng": 6.66666650772095
+                },
+                "countryCode": "NL",
+                "name": "Almelo de Riet",
+                "stationCode": "AMRI",
+                "uicCode": "8400520"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2988891601562,
+                  "lng": 6.74805545806885
+                },
+                "countryCode": "NL",
+                "name": "Borne",
+                "stationCode": "BN",
+                "uicCode": "8400124"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2616653442383,
+                  "lng": 6.79388904571533
+                },
+                "countryCode": "NL",
+                "name": "Hengelo",
+                "stationCode": "HGL",
+                "uicCode": "8400316"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "NS"
+            ]
+          },
+          "description": "er rijden bussen",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      },
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.5047225952148,
+                "lng": 6.09194421768188
+              },
+              "countryCode": "NL",
+              "name": "Zwolle",
+              "stationCode": "ZL",
+              "uicCode": "8400747"
+            },
+            {
+              "coordinate": {
+                "lat": 52.4272232055664,
+                "lng": 6.22111129760742
+              },
+              "countryCode": "NL",
+              "name": "Heino",
+              "stationCode": "HNO",
+              "uicCode": "8400310"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3916664123535,
+                "lng": 6.27750015258789
+              },
+              "countryCode": "NL",
+              "name": "Raalte",
+              "stationCode": "RAT",
+              "uicCode": "8400513"
+            },
+            {
+              "coordinate": {
+                "lat": 52.366111,
+                "lng": 6.462
+              },
+              "countryCode": "NL",
+              "name": "Nijverdal",
+              "stationCode": "NVD",
+              "uicCode": "8400472"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3613891601562,
+                "lng": 6.59166669845581
+              },
+              "countryCode": "NL",
+              "name": "Wierden",
+              "stationCode": "WDN",
+              "uicCode": "8400691"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3580551147461,
+                "lng": 6.65388870239258
+              },
+              "countryCode": "NL",
+              "name": "Almelo",
+              "stationCode": "AML",
+              "uicCode": "8400051"
+            },
+            {
+              "coordinate": {
+                "lat": 52.3419456481934,
+                "lng": 6.66666650772095
+              },
+              "countryCode": "NL",
+              "name": "Almelo de Riet",
+              "stationCode": "AMRI",
+              "uicCode": "8400520"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2988891601562,
+                "lng": 6.74805545806885
+              },
+              "countryCode": "NL",
+              "name": "Borne",
+              "stationCode": "BN",
+              "uicCode": "8400124"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2616653442383,
+                "lng": 6.79388904571533
+              },
+              "countryCode": "NL",
+              "name": "Hengelo",
+              "stationCode": "HGL",
+              "uicCode": "8400316"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2374992370605,
+                "lng": 6.83888912200928
+              },
+              "countryCode": "NL",
+              "name": "Enschede Kennispark",
+              "stationCode": "ESK",
+              "uicCode": "8400221"
+            },
+            {
+              "coordinate": {
+                "lat": 52.2224998474121,
+                "lng": 6.8899998664856
+              },
+              "countryCode": "NL",
+              "name": "Enschede",
+              "stationCode": "ES",
+              "uicCode": "8400212"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "Blauwnet"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.3613891601562,
+                  "lng": 6.59166669845581
+                },
+                "countryCode": "NL",
+                "name": "Wierden",
+                "stationCode": "WDN",
+                "uicCode": "8400691"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3580551147461,
+                  "lng": 6.65388870239258
+                },
+                "countryCode": "NL",
+                "name": "Almelo",
+                "stationCode": "AML",
+                "uicCode": "8400051"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.3419456481934,
+                  "lng": 6.66666650772095
+                },
+                "countryCode": "NL",
+                "name": "Almelo de Riet",
+                "stationCode": "AMRI",
+                "uicCode": "8400520"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2988891601562,
+                  "lng": 6.74805545806885
+                },
+                "countryCode": "NL",
+                "name": "Borne",
+                "stationCode": "BN",
+                "uicCode": "8400124"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.2616653442383,
+                  "lng": 6.79388904571533
+                },
+                "countryCode": "NL",
+                "name": "Hengelo",
+                "stationCode": "HGL",
+                "uicCode": "8400316"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "Blauwnet"
+            ]
+          },
+          "description": "er rijden bussen",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      }
+    ],
+    "summaryAdditionalTravelTime": {
+      "label": "De extra reistijd kan oplopen tot 30 minuten.",
+      "shortLabel": "Extra reistijd tot 30 min.",
+      "maximumDurationInMinutes": 30
+    },
+    "timespans": [
+      {
+        "start": "2025-02-08T01:15:00+0100",
+        "end": "2025-02-10T02:00:00+0100",
+        "period": "Zaterdag 8 februari 1:15 uur t/m maandag 10 februari 2:00 uur.",
+        "situation": {
+          "label": "Door werkzaamheden: tussen Deventer en Hengelo rijden er bussen en tussen Wierden en Hengelo rijden er bussen."
+        },
+        "cause": {
+          "label": "werkzaamheden"
+        },
+        "additionalTravelTime": {
+          "label": "De extra reistijd kan oplopen tot 30 minuten.",
+          "shortLabel": "Extra reistijd tot 30 min.",
+          "maximumDurationInMinutes": 30
+        },
+        "alternativeTransport": {
+          "label": "er rijden stop- en snelbussen",
+          "shortLabel": "er rijden stop- en snelbussen"
+        },
+        "advices": [
+          "Plan uw reis in de app."
+        ]
+      }
+    ],
+    "alternativeTransportTimespans": [
+      {
+        "start": "2025-02-08T01:15:00+0100",
+        "end": "2025-02-10T02:00:00+0100",
+        "alternativeTransport": {
+          "location": [
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2574996948242,
+                  "lng": 6.16055536270142
+                },
+                "countryCode": "NL",
+                "name": "Deventer",
+                "stationCode": "DV",
+                "uicCode": "8400173"
+              },
+              "description": "vanaf de Stationsstraat"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2502784729004,
+                  "lng": 6.21444463729858
+                },
+                "countryCode": "NL",
+                "name": "Deventer Colmschate",
+                "stationCode": "DVC",
+                "uicCode": "8400185"
+              },
+              "description": "vanaf het P+R-terrein"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2838897705078,
+                  "lng": 6.42027759552002
+                },
+                "countryCode": "NL",
+                "name": "Holten",
+                "stationCode": "HON",
+                "uicCode": "8400328"
+              },
+              "description": "vanaf de NS Bushalte"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3122215270996,
+                  "lng": 6.52027797698975
+                },
+                "countryCode": "NL",
+                "name": "Rijssen",
+                "stationCode": "RSN",
+                "uicCode": "8400538"
+              },
+              "description": "vanaf het P+R-terrein"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3613891601562,
+                  "lng": 6.59166669845581
+                },
+                "countryCode": "NL",
+                "name": "Wierden",
+                "stationCode": "WDN",
+                "uicCode": "8400691"
+              },
+              "description": "vanaf de voorzijde van het station"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3580551147461,
+                  "lng": 6.65388870239258
+                },
+                "countryCode": "NL",
+                "name": "Almelo",
+                "stationCode": "AML",
+                "uicCode": "8400051"
+              },
+              "description": "vanaf de voorzijde van het station"
+            }
+          ],
+          "label": "Er rijden stopbussen tussen Deventer, Deventer Colmschate, Holten, Rijssen, Wierden en Almelo.",
+          "shortLabel": "Er rijden stopbussen Deventer - Colmschate - Holten - Rijssen - Wierden - Almelo."
+        }
+      },
+      {
+        "start": "2025-02-08T01:15:00+0100",
+        "end": "2025-02-10T02:00:00+0100",
+        "alternativeTransport": {
+          "location": [
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2574996948242,
+                  "lng": 6.16055536270142
+                },
+                "countryCode": "NL",
+                "name": "Deventer",
+                "stationCode": "DV",
+                "uicCode": "8400173"
+              },
+              "description": "vanaf de Stationsstraat"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2616653442383,
+                  "lng": 6.79388904571533
+                },
+                "countryCode": "NL",
+                "name": "Hengelo",
+                "stationCode": "HGL",
+                "uicCode": "8400316"
+              },
+              "description": "vanaf de voorzijde van het station"
+            }
+          ],
+          "label": "Er rijden snelbussen tussen Deventer en Hengelo.",
+          "shortLabel": "Er rijden snelbussen Deventer - Hengelo."
+        }
+      },
+      {
+        "start": "2025-02-08T01:15:00+0100",
+        "end": "2025-02-10T02:00:00+0100",
+        "alternativeTransport": {
+          "location": [
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2574996948242,
+                  "lng": 6.16055536270142
+                },
+                "countryCode": "NL",
+                "name": "Deventer",
+                "stationCode": "DV",
+                "uicCode": "8400173"
+              },
+              "description": "vanaf de Stationsstraat"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3580551147461,
+                  "lng": 6.65388870239258
+                },
+                "countryCode": "NL",
+                "name": "Almelo",
+                "stationCode": "AML",
+                "uicCode": "8400051"
+              },
+              "description": "vanaf de voorzijde van het station"
+            }
+          ],
+          "label": "Er rijden snelbussen tussen Deventer en Almelo.",
+          "shortLabel": "Er rijden snelbussen Deventer - Almelo."
+        }
+      },
+      {
+        "start": "2025-02-08T01:15:00+0100",
+        "end": "2025-02-10T02:00:00+0100",
+        "alternativeTransport": {
+          "location": [
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3613891601562,
+                  "lng": 6.59166669845581
+                },
+                "countryCode": "NL",
+                "name": "Wierden",
+                "stationCode": "WDN",
+                "uicCode": "8400691"
+              },
+              "description": "vanaf de voorzijde van het station"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.3580551147461,
+                  "lng": 6.65388870239258
+                },
+                "countryCode": "NL",
+                "name": "Almelo",
+                "stationCode": "AML",
+                "uicCode": "8400051"
+              },
+              "description": "vanaf het busstation"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2988891601562,
+                  "lng": 6.74805545806885
+                },
+                "countryCode": "NL",
+                "name": "Borne",
+                "stationCode": "BN",
+                "uicCode": "8400124"
+              },
+              "description": "vanaf de voorzijde van het station"
+            },
+            {
+              "station": {
+                "coordinate": {
+                  "lat": 52.2616653442383,
+                  "lng": 6.79388904571533
+                },
+                "countryCode": "NL",
+                "name": "Hengelo",
+                "stationCode": "HGL",
+                "uicCode": "8400316"
+              },
+              "description": "vanaf de voorzijde van het station"
+            }
+          ],
+          "label": "Er rijden stopbussen tussen Wierden, Almelo, Borne en Hengelo.",
+          "shortLabel": "Er rijden stopbussen Wierden - Almelo - Borne - Hengelo."
+        }
+      }
+    ]
   }
 ]

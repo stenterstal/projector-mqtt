@@ -19,12 +19,23 @@ function getDisruption(fromStationCode){
 function addDisruption(disruptions){
     // Add a view for each disruption
     $.each(disruptions, function (key, disruption) {
-        if(disruption.type === "DISRUPTION" && disruption.isActive){
+        let disruptionType = disruption.type
+        if(["DISRUPTION", "MAINTENANCE", "WERKZAAMHEDEN"].includes(disruptionType) && disruption.isActive){
             var title = disruption.title
-            var expectedDuration = disruption.expectedDuration.description
-            addNotification(title, expectedDuration, 'disruption')
+            var expectedDuration = getSubtitle(disruption)
+            addNotification(title, expectedDuration, disruptionType)
         }
     })
+}
+
+function getSubtitle(disruption){
+    var subtitle = null
+    if(disruption?.expectedDuration?.description){
+        subtitle = disruption.expectedDuration.description
+    } else if(disruption?.summaryAdditionalTravelTime?.shortLabel){
+        subtitle = disruption.summaryAdditionalTravelTime.shortLabel
+    }
+    return subtitle
 }
 
 random()
