@@ -50,9 +50,12 @@ class Projector:
         payload = msg.payload.decode('utf-8')
         if msg.topic == self.mqtt_topic:
             if payload == "ON":
-                self.mqtt_log.info("Received turn on")
+                self.mqtt_log.info("Received turn on")\
+                # Reload frontend
                 subprocess.run(["/usr/bin/sudo", "xdotool", "key", "ctrl+r"])
-                time.sleep(1)
+                # Give frontend some time to (re)load
+                time.sleep(3)
+                # Then turn on the actual screen
                 self.projector_turn_on()
             elif payload == "OFF":
                 self.mqtt_log.info("Received turn off")

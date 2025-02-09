@@ -2,6 +2,8 @@ html, body {
     background-color: #000 !important;
     height: 100%;
     color: #ffffff !important;
+    opacity: 0;
+    animation: fadeInFromBelow 5s ease-out forwards;
 }
 
 h1 {
@@ -15,9 +17,6 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInFromBelow 0.75s ease-out forwards;
     .icon-container {
         display: flex;
         gap: 8px;
@@ -39,12 +38,10 @@ h1 {
 }
 
 @keyframes fadeInFromBelow {
-    0% {
+    90% {
         opacity: 0;
-        transform: translateY(30px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }
