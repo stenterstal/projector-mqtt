@@ -54,7 +54,8 @@ class Projector:
                 # Reload frontend
                 subprocess.run(["/usr/bin/sudo", "xdotool", "key", "ctrl+r"])
                 # Give frontend some time to (re)load
-                time.sleep(1)
+                # (After the frontend receives a reload keypress, it will fade in over the course of 3 seconds)
+                time.sleep(2)
                 # Then turn on the actual screen
                 self.projector_turn_on()
             elif payload == "OFF":
