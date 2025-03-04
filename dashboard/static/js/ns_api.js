@@ -5,8 +5,8 @@ if(ns_enabled && ns_enabled === 'True'){
 function getDisruption(fromStationCode){
     $.ajax({
         type: "GET",
-        url: "test/disruptions",
-        // url: ' https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions/station/'+fromStationCode,
+        // url: "test/disruptions",
+        url: ' https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions/station/'+fromStationCode,
         headers: {
             'Ocp-Apim-Subscription-Key': ns_api_key
         },

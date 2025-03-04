@@ -5,8 +5,8 @@ if(weather_enabled && weather_enabled === 'True'){
 function getWeather(latitude, longitude){
     $.ajax({
         type: "GET",
-        url: "test/weather",
-        // url: 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&hourly=temperature_2m,rain,cloud_cover&timezone=auto&forecast_days=1',
+        // url: "test/weather",
+        url: 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&hourly=temperature_2m,rain,cloud_cover&timezone=auto&forecast_days=1',
         success: function (data){
             const chartData = getChartData(data)
             setWeatherChart(chartData)
