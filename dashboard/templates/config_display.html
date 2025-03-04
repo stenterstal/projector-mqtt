@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/config/display" method="POST" class="mb-3 p-4 border-end border-start border-bottom"
+      style="border-bottom-left-radius: 6px; border-bottom-right-radius: 6px">
+    <div class="d-flex align-items-center gap-2">
+        <h3>NS Route Notifications</h3>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="ns_enabled" name="ns_enabled" {{ 'checked' if data.ns_enabled == 'True' else '' }}>
+        </div>
+    </div>
+    <div id="ns_fields_container">
+        <div class="mb-3">
+            <label for="ns_api_key" class="form-label">NS API Key</label>
+            <input type="text" class="form-control" name="ns_api_key" id="ns_api_key" placeholder="Ns-App Product API-Key" value="{{data.ns_api_key}}">
+        </div>
+        <div class="mb-3">
+            <label for="ns_station_code" class="form-label">NS API Station Code</label>
+            <input type="text" class="form-control" name="ns_station_code" id="ns_station_code" placeholder="AMS" value="{{data.ns_station_code}}">
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center gap-2">
+        <h3>Weather forecast</h3>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="weather_enabled" name="weather_enabled" {{ 'checked' if data.weather_enabled == 'True' else '' }}>
+        </div>
+    </div>
+    <div id="weather_fields_container">
+        <div class="mb-3">
+            <label for="weather_latitude" class="form-label">Latitude</label>
+            <input type="text" class="form-control" name="weather_latitude" id="weather_latitude" placeholder="52.377956" value="{{data.weather_latitude}}">
+        </div>
+        <div class="mb-3">
+            <label for="weather_longitude" class="form-label">Longitude</label>
+            <input type="text" class="form-control" name="weather_longitude" id="weather_longitude" placeholder="4.897070" value="{{data.weather_longitude}}">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</form>
+{% endblock %}

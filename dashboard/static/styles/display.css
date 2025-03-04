@@ -2,15 +2,34 @@ html, body {
     background-color: #000 !important;
     height: 100%;
     color: #ffffff !important;
-    opacity: 0;
-    animation: fadeInFromBelow 3s ease-out forwards;
+    /*opacity: 0;*/
+    /*animation: fadeIn 3s ease-out forwards;*/
 }
+
+@keyframes fadeIn {
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 h1 {
     font-size: 96px !important;
     font-family: "JetBrains Mono", sans-serif;
     padding: 0;
     margin: 0;
+}
+
+#weather-chart-time-cursor {
+    line-height: 16px;
+    margin-top: -6px;
+    transform: translateX(calc(5% - 8px));
+    svg {
+        rotate: -45deg;
+    }
 }
 
 .notification {
@@ -34,14 +53,5 @@ h1 {
         span {
             font-size: 18px
         }
-    }
-}
-
-@keyframes fadeInFromBelow {
-    90% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }

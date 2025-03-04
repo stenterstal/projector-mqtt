@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projector Configurator</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/dist/bootstrap.min.css') }}">
+</head>
+<body>
+    <script src="{{ url_for('static',filename='js/dist/bootstrap.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='js/dist/jquery.min.js') }}" crossorigin="anonymous"></script>
+    <div class="col-lg-8 mx-auto p-4 py-md-5">
+        <header class="d-flex align-items-center pb-3">
+            <h1>Projector configuration</h1>
+        </header>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link {{ 'active' if request.endpoint == 'config_page_mqtt' else '' }}" aria-current="page" href="/config/mqtt">MQTT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ 'active' if request.endpoint == 'config_page_homeassistant' else '' }}" href="/config/homeassistant">Homeassistant</a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" disabled="true" href="/wifi">WIFI</a>-->
+<!--            </li>-->
+            <li class="nav-item">
+                <a class="nav-link {{ 'active' if request.endpoint == 'config_page_display' else '' }}" href="/config/display">Display</a>
+            </li>
+        </ul>
+    {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

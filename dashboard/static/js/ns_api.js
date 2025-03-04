@@ -1,16 +1,16 @@
-// Get the disruptions from NS API for station Enschede
-getDisruption('ES')
+if(ns_enabled && ns_enabled === 'True'){
+    getDisruption(ns_station_code)
+}
 
 function getDisruption(fromStationCode){
     $.ajax({
         type: "GET",
-        url: "disruptions",
+        url: "test/disruptions",
         // url: ' https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions/station/'+fromStationCode,
         headers: {
-            'Ocp-Apim-Subscription-Key': ''
+            'Ocp-Apim-Subscription-Key': ns_api_key
         },
         success: function (disruptions){
-            // console.log(disruptions)
             addDisruption(disruptions)
         }
     })
@@ -36,18 +36,4 @@ function getSubtitle(disruption){
         subtitle = disruption.summaryAdditionalTravelTime.shortLabel
     }
     return subtitle
-}
-
-random()
-
-function random(){
-    $.ajax({
-        url: 'https://randomuser.me/api/',
-        dataType: 'json',
-        success: function(data) {
-            let title = data.results[0].email
-            let subtitle = data.results[0].phone
-            addNotification(title, subtitle)
-        }
-    });
 }
