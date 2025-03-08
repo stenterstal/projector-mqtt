@@ -9,6 +9,7 @@
 <body>
     <div class="h-100 d-flex flex-column align-items-center">
         <h1 id="time">Time</h1>
+        {% if environment.weather_enabled %}
         <div>
             <canvas id="weather-chart" style="width: 400px; height: 120px"></canvas>
             <div id="weather-chart-time-cursor">
@@ -17,6 +18,7 @@
                 </svg>
             </div>
         </div>
+        {% endif %}
         <div id="notifications"></div>
     </div>
 
@@ -24,9 +26,9 @@
     <script>
         // Loop over environment variables object and set them as js variables
         {% for key, value in environment.items() %}
-            {% if value is not none %}
-                var {{ key | lower }} = "{{ value }}";
-            {% endif %}
+        {% if value is not none %}
+        var {{ key | lower }} = "{{ value }}";
+        {% endif %}
         {% endfor %}
     </script>
     <script src="{{ url_for('static',filename='js/dist/jquery.min.js') }}" crossorigin="anonymous"></script>

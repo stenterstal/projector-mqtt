@@ -6,7 +6,7 @@ function getWeather(latitude, longitude){
     $.ajax({
         type: "GET",
         // url: "test/weather",
-        url: 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&hourly=temperature_2m,rain,cloud_cover&timezone=auto&forecast_days=1',
+        url: 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&hourly=temperature_2m,rain,cloud_cover&timezone=auto&forecast_days=2',
         success: function (data){
             const chartData = getChartData(data)
             setWeatherChart(chartData)
@@ -22,7 +22,7 @@ function getChartData(data){
         });
     labels.push('24:00')
 
-    const dataset = data.hourly.rain.slice(0, 24)
+    const dataset = data.hourly.rain.slice(0, 25)
     return [labels, dataset]
 }
 

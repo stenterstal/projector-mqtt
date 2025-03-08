@@ -27,6 +27,7 @@ class Projector:
             return
 
         self.mqtt_topic = config['homeassistant']['command_topic']
+        self.mqtt_state_topic = config['homeassistant']['state_topic']
 
         self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.mqttc.on_connect = self.on_connect
@@ -43,6 +44,7 @@ class Projector:
             self.mqtt_log.error(f"Something went wrong: Connected with result code {reason_code}")
         else:
             self.mqtt_log.info("Successfully connected")
+            self.mqttc.publish(self.mqtt_state_topic, "ON")
 
         client.subscribe(self.mqtt_topic)
 
