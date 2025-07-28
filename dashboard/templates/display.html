@@ -10,25 +10,20 @@
     <div class="h-100 d-flex flex-column align-items-center">
         <h1 id="time">Time</h1>
         {% if environment.weather_enabled %}
-        <div>
+        <div id="weather-widget">
             <canvas id="weather-chart" style="width: 400px; height: 120px"></canvas>
-            <div id="weather-chart-time-cursor">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
-                    <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
-                </svg>
-            </div>
         </div>
         {% endif %}
-        <div id="notifications"></div>
+        <!-- <div id="notifications"></div> -->
     </div>
 
     <!-- Script load order matters! -->
     <script>
         // Loop over environment variables object and set them as js variables
         {% for key, value in environment.items() %}
-        {% if value is not none %}
-        var {{ key | lower }} = "{{ value }}";
-        {% endif %}
+            {% if value is not none %}
+                var {{ key | lower }} = "{{ value }}";
+            {% endif %}
         {% endfor %}
     </script>
     <script src="{{ url_for('static',filename='js/dist/jquery.min.js') }}" crossorigin="anonymous"></script>

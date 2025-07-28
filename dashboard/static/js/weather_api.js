@@ -1,12 +1,19 @@
+//
+// ONLY 
+//
 if(weather_enabled && weather_enabled === 'True'){
-    getWeather(weather_latitude, weather_longitude)
+    getWeather(weather_latitude, weather_longitude, debug_mode == "True")
 }
 
-function getWeather(latitude, longitude){
+function getWeather(latitude, longitude, debug_mode){
+    if (debug_mode){
+        url = "test/weather"
+    } else {
+        url = 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&hourly=temperature_2m,rain,cloud_cover&timezone=auto&daily=weather_code&forecast_days=2'
+    }
     $.ajax({
         type: "GET",
-        // url: "test/weather",
-        url: 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&hourly=temperature_2m,rain,cloud_cover&timezone=auto&forecast_days=2',
+        url: url,
         success: function (data){
             const chartData = getChartData(data)
             setWeatherChart(chartData)
@@ -15,6 +22,7 @@ function getWeather(latitude, longitude){
 }
 
 function getChartData(data){
+    console.log(data)
     const labels = data.hourly.time
         .slice(0, 24)
         .map(timestamp => {
@@ -30,8 +38,6 @@ function setWeatherChart(weather){
     const [labels, dataset] = weather
     const ctx = document.getElementById('weather-chart');
 
-    setTimeCursor()
-
     new Chart(ctx, {
         type: 'line',
         data: {
@@ -46,7 +52,7 @@ function setWeatherChart(weather){
         options: {
             elements: {
                 line: {
-                    tension: 0.5
+                    tension: 0.4
                 }
             },
             plugins: {
@@ -56,36 +62,43 @@ function setWeatherChart(weather){
             },
             scales: {
                 x: {
+                    position: 'top',
                     ticks: {
-                        maxTicksLimit: 7
-                    }
+                        maxTicksLimit: 7,
+                        font: {
+                            family: 'Open Sans',
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        autoSkip: true,
+                        callback: function(value, index, values) {
+                            if (index === 0 || index === values.length - 1) {
+                            return ''; // Hide the first and last ticks
+                            }
+                            return value
+                        },
+                    },
+                    grid: { display: false },
+                    axis: { display: false },
+                    border: { display: false }
                 },
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    position: 'right',
+                    ticks: {
+                        maxTicksLimit: 3,
+                        crossAlign: 'center',
+                        font: {
+                            family: 'Open Sans',
+                            size: 14,
+                            weight: 'bold'
+                        },
+                    },
+                    grid: { display: false },
+                    axis: { display: false },
+                    border: { display: false }
                 }
             }
         }
     });
-}
-
-function setTimeCursor(){
-    // Clamp the percentage to a range between 5% min and 96% max to account for the chart padding
-    const clampedPercentage = 5 + (getTimeAsPercentage() / 100) * (96 - 5)
-    // Translate the cursor container on the X axis
-    $('#weather-chart-time-cursor').css('transform', 'translateX(calc('+clampedPercentage+'%  - 8px))');
-}
-
-function getTimeAsPercentage() {
-    const now = new Date(); // Get the current time
-    const hours = now.getHours(); // Get the current hour
-    const minutes = now.getMinutes(); // Get the current minutes
-
-    // Convert current time to total minutes
-    const totalMinutes = (hours * 60) + minutes;
-
-    // Total minutes in a day (24 hours * 60 minutes)
-    const totalMinutesInDay = 24 * 60;
-
-    // Calculate the percentage
-    return Math.round((totalMinutes / totalMinutesInDay) * 100);
 }

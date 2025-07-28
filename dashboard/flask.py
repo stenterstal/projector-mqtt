@@ -27,6 +27,7 @@ def display():
     environment = {}
     config = read_config().get('display')
     if config:
+        environment['debug_mode'] = config.get('debug_mode', False)
         # NS Environment variables
         environment['ns_enabled'] = config.get('ns_enabled') == 'True'
         environment['ns_api_key'] = config.get('ns_api_key')
@@ -35,6 +36,7 @@ def display():
         environment['weather_enabled'] = config.get('weather_enabled') == 'True'
         environment['weather_latitude'] = config.get('weather_latitude')
         environment['weather_longitude'] = config.get('weather_longitude')
+        print(environment)
     return render_template('display.html', environment=environment)
 
 #

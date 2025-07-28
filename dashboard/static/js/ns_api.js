@@ -1,12 +1,17 @@
 if(ns_enabled && ns_enabled === 'True'){
-    getDisruption(ns_station_code)
+    getDisruption(ns_station_code, debug_mode == "True")
 }
 
-function getDisruption(fromStationCode){
+function getDisruption(fromStationCode, debug_mode){
+    if (debug_mode){
+        url = "test/disruptions"
+    } else {
+        url = ' https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions/station/'+fromStationCode
+    }
+    console.log(url)
     $.ajax({
         type: "GET",
-        // url: "test/disruptions",
-        url: ' https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions/station/'+fromStationCode,
+        url: url,
         headers: {
             'Ocp-Apim-Subscription-Key': ns_api_key
         },
