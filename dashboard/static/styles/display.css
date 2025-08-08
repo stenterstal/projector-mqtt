@@ -5,8 +5,15 @@ body {
     background-color: #000 !important;
     height: 100%;
     color: #ffffff !important;
-    width: 795px;
-    height: 475px;
+    width: 800px;
+    height: 480px;
+}
+
+@font-face {
+  font-family: 'Repetition';
+  src: url('/static/font/repetition.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @keyframes fadeIn {
@@ -20,16 +27,17 @@ body {
 
 
 h1 {
-    font-size: 78px !important;
-    font-family: "JetBrains Mono", sans-serif;
+    font-size: 84px !important;
+    font-family: "Repetition", sans-serif;
     padding: 0;
     margin: 0;
+    letter-spacing: 1px;
 }
 
 /* Weather Widget */
 
 #weather-widget {
-    background-color: #333;
+    background-color: #444;
     padding: 6px;
     border-radius: 16px;
     font-family: 'Open Sans', sans-serif;
@@ -38,6 +46,7 @@ h1 {
 
 #weather-widget .top {
     display: flex;
+    margin: -6px 0 -6px 0;
 }
 
 #weather-widget .main-weather {
@@ -47,7 +56,7 @@ h1 {
     align-items: center;
 }
 
-#weather-widget .main-weather-icon {
+#weather-widget #main-weather-icon {
     height: 96px;
     width: 96px;
 }
@@ -61,7 +70,8 @@ h1 {
 #weather-widget .main-weather span {
     font-weight: normal;
     font-size: 18px;
-    color: #888;
+    color: #D4D4D4;
+    margin-top: -1px;
 }
 
 #weather-widget .weather-description {
