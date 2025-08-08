@@ -5,8 +5,8 @@ body {
     background-color: #000 !important;
     height: 100%;
     color: #ffffff !important;
-    width: 864px;
-    height: 480px;
+    width: 795px;
+    height: 475px;
 }
 
 @keyframes fadeIn {
@@ -27,9 +27,10 @@ h1 {
 }
 
 #weather-widget {
-    background-color: #141414;
+    background-color: #333;
     padding: 12px 12px 0 12px;
     border-radius: 16px;
+    display: flex;
 }
 
 #weather-chart-time-cursor {

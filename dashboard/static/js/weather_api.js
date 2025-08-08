@@ -65,10 +65,12 @@ function setWeatherChart(weather){
                     position: 'top',
                     ticks: {
                         maxTicksLimit: 7,
+                        color: 'white',
                         font: {
                             family: 'Open Sans',
                             size: 14,
-                            weight: 'bold'
+                            weight: 'bold',
+                            color: "#FFF"
                         },
                         autoSkip: true,
                         callback: function(value, index, values) {
@@ -87,6 +89,7 @@ function setWeatherChart(weather){
                     position: 'right',
                     ticks: {
                         maxTicksLimit: 3,
+                        color: 'white',
                         crossAlign: 'center',
                         font: {
                             family: 'Open Sans',
