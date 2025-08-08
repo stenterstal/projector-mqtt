@@ -70,7 +70,6 @@ class Projector:
         DPP2607_SetIODebug(IODebug)
         DPP2607_Write_VideoSourceSelection(SourceSel.EXTERNAL_VIDEO_PARALLEL_I_F_)
         DPP2607_Write_VideoResolution(Resolution.WVGA_864_LANDSCAPE) #640x360
-        DPP2607_Write_VideoPixelFormat(RGB888_24_BIT)
         DPP2607_Write_LedCurrentRed(300)
         DPP2607_Write_LedCurrentGreen(300)
         DPP2607_Write_LedCurrentBlue(300)

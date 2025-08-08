@@ -20,27 +20,89 @@ body {
 
 
 h1 {
-    font-size: 96px !important;
+    font-size: 78px !important;
     font-family: "JetBrains Mono", sans-serif;
     padding: 0;
     margin: 0;
 }
 
+/* Weather Widget */
+
 #weather-widget {
     background-color: #333;
-    padding: 12px 12px 0 12px;
+    padding: 6px;
     border-radius: 16px;
+    font-family: 'Open Sans', sans-serif;
+    /* display: flex; */
+}
+
+#weather-widget .top {
     display: flex;
 }
 
-#weather-chart-time-cursor {
-    line-height: 16px;
-    margin-top: -6px;
-    transform: translateX(calc(5% - 8px));
-    svg {
-        rotate: -45deg;
-    }
+#weather-widget .main-weather {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    align-items: center;
 }
+
+#weather-widget .main-weather-icon {
+    height: 96px;
+    width: 96px;
+}
+
+#weather-widget .main-weather p {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+#weather-widget .main-weather span {
+    font-weight: normal;
+    font-size: 18px;
+    color: #888;
+}
+
+#weather-widget .weather-description {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+#weather-widget .weather-description p {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#weather-widget .bottom {
+    display: flex;
+}
+
+#weather-widget .slot {
+    margin: 0 6px 0 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+#weather-widget .slot img {
+    height: 64px;
+    width: 64px;
+}
+
+#weather-widget .slot .time {
+    margin-bottom: -6px;
+}
+
+#weather-widget .slot .temp {
+    margin-bottom: 0;
+    margin-top: -6px;
+}
+
+/* Other Widgets */
 
 .notification {
     display: flex;
