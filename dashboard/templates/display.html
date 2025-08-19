@@ -16,41 +16,12 @@
                     <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}" id="main-weather-icon">
                     <p id="daily_temp">23° <span>18°</span></p>
                 </div>
-                <div class="weather-description">
-                    <p>RAINY</p>
+                <div id="weather-description">
+                    <p id="weather-description-text">RAINY</p>
                 </div>
             </div>
-            <div class="bottom">
-                <div class="slot">
-                    <p class="time">7 AM</p>
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}">
-                    <p class="temp">20°</p>
-                </div>
-                <div class="slot">
-                    <p class="time">10 AM</p>
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}">
-                    <p class="temp">20°</p>
-                </div>
-                <div class="slot">
-                    <p class="time">1 PM</p>
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}">
-                    <p class="temp">20°</p>
-                </div>
-                <div class="slot">
-                    <p class="time">4 PM</p>
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}">
-                    <p class="temp">20°</p>
-                </div>
-                <div class="slot">
-                    <p class="time">7 PM</p>
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}">
-                    <p class="temp">20°</p>
-                </div>
-                <div class="slot">
-                    <p class="time">10 PM</p>
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}">
-                    <p class="temp">20°</p>
-                </div>
+            <div class="bottom" id="weather-slot-container">
+            
             </div>
         </div>
         {% endif %}
