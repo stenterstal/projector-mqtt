@@ -478,5 +478,219 @@
       }
     ],
     "alternativeTransportTimespans": []
+  },
+    {
+    "type": "DISRUPTION",
+    "id": "6053817",
+    "title": "SHOULD NOT SHOW",
+    "isActive": true,
+    "topic": "disruption_6053817_nl",
+    "local": true,
+    "titleSections": [
+      [
+        {
+          "type": "STATION",
+          "value": "Amersfoort C."
+        },
+        {
+          "type": "ICON",
+          "value": "DISRUPTION"
+        },
+        {
+          "type": "STATION",
+          "value": "Barneveld Zuid"
+        },
+        {
+          "type": "STATION",
+          "value": "Ede-Wageningen"
+        }
+      ]
+    ],
+    "registrationTime": "2025-02-07T15:39:29+0100",
+    "releaseTime": "2025-02-07T16:05:00+0100",
+    "start": "2025-02-07T14:56:39+0100",
+    "end": "2025-02-07T18:35:00+0100",
+    "phase": {
+      "id": "2",
+      "label": "Impact bekend"
+    },
+    "impact": {
+      "value": 3
+    },
+    "expectedDuration": {
+      "description": "Dit duurt tot ongeveer 16:30 uur.",
+      "endTime": "2025-02-07T16:30:00+0100"
+    },
+    "publicationSections": [
+      {
+        "section": {
+          "stations": [
+            {
+              "coordinate": {
+                "lat": 52.1538887023926,
+                "lng": 5.37055540084839
+              },
+              "countryCode": "NL",
+              "name": "Amersfoort Centraal",
+              "stationCode": "AMF",
+              "uicCode": "8400055"
+            },
+            {
+              "coordinate": {
+                "lat": 52.16652,
+                "lng": 5.45718
+              },
+              "countryCode": "NL",
+              "name": "Hoevelaken",
+              "stationCode": "HVL",
+              "uicCode": "8400490"
+            },
+            {
+              "coordinate": {
+                "lat": 52.1613883972168,
+                "lng": 5.59805536270142
+              },
+              "countryCode": "NL",
+              "name": "Barneveld Noord",
+              "stationCode": "BNN",
+              "uicCode": "8400092"
+            },
+            {
+              "coordinate": {
+                "lat": 52.1399993896484,
+                "lng": 5.59027767181396
+              },
+              "countryCode": "NL",
+              "name": "Barneveld Centrum",
+              "stationCode": "BNC",
+              "uicCode": "8400091"
+            },
+            {
+              "coordinate": {
+                "lat": 52.128853,
+                "lng": 5.60246
+              },
+              "countryCode": "NL",
+              "name": "Barneveld Zuid",
+              "stationCode": "BNZ",
+              "uicCode": "8400115"
+            },
+            {
+              "coordinate": {
+                "lat": 52.085277557373,
+                "lng": 5.62444448471069
+              },
+              "countryCode": "NL",
+              "name": "Lunteren",
+              "stationCode": "LTN",
+              "uicCode": "8400405"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0436096191406,
+                "lng": 5.66833353042603
+              },
+              "countryCode": "NL",
+              "name": "Ede Centrum",
+              "stationCode": "EDC",
+              "uicCode": "8400201"
+            },
+            {
+              "coordinate": {
+                "lat": 52.0277786254883,
+                "lng": 5.67305564880371
+              },
+              "countryCode": "NL",
+              "name": "Ede-Wageningen",
+              "stationCode": "ED",
+              "uicCode": "8400200"
+            }
+          ],
+          "direction": "BOTH",
+          "operators": [
+            "RRReis"
+          ]
+        },
+        "consequence": {
+          "section": {
+            "stations": [
+              {
+                "coordinate": {
+                  "lat": 52.1538887023926,
+                  "lng": 5.37055540084839
+                },
+                "countryCode": "NL",
+                "name": "Amersfoort Centraal",
+                "stationCode": "AMF",
+                "uicCode": "8400055"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.16652,
+                  "lng": 5.45718
+                },
+                "countryCode": "NL",
+                "name": "Hoevelaken",
+                "stationCode": "HVL",
+                "uicCode": "8400490"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.1613883972168,
+                  "lng": 5.59805536270142
+                },
+                "countryCode": "NL",
+                "name": "Barneveld Noord",
+                "stationCode": "BNN",
+                "uicCode": "8400092"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.1399993896484,
+                  "lng": 5.59027767181396
+                },
+                "countryCode": "NL",
+                "name": "Barneveld Centrum",
+                "stationCode": "BNC",
+                "uicCode": "8400091"
+              },
+              {
+                "coordinate": {
+                  "lat": 52.128853,
+                  "lng": 5.60246
+                },
+                "countryCode": "NL",
+                "name": "Barneveld Zuid",
+                "stationCode": "BNZ",
+                "uicCode": "8400115"
+              }
+            ],
+            "direction": "BOTH",
+            "operators": [
+              "RRReis"
+            ]
+          },
+          "description": "veel minder treinen",
+          "level": "LESS_TRAINS"
+        },
+        "sectionType": "NL"
+      }
+    ],
+    "timespans": [
+      {
+        "start": "2025-02-07T14:56:39+0100",
+        "end": "2025-02-07T18:35:00+0100",
+        "situation": {
+          "label": "Door een defecte trein: tussen Amersfoort Centraal en Barneveld Zuid rijden er veel minder treinen."
+        },
+        "cause": {
+          "label": "defecte trein"
+        },
+        "advices": [
+          "Naar Ede-Wageningen kan ook via Utrecht C. Extra reistijd tot 20 min."
+        ]
+      }
+    ],
+    "alternativeTransportTimespans": []
   }
 ]

@@ -16,7 +16,7 @@ function getDisruption(fromStationCode, debug_mode){
             'Ocp-Apim-Subscription-Key': ns_api_key
         },
         success: function (disruptions){
-            addDisruption(disruptions)
+            addDisruption(disruptions.slice(0, 2))
         }
     })
 }

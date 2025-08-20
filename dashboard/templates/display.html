@@ -17,13 +17,11 @@
                         <p id="weather-description-text">RAINY</p>
                     </div>
                     <div class="main-weather">
-                        <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}" id="main-weather-icon">
                         <p id="daily_temp">23° <span>18°</span></p>
+                        <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}" id="main-weather-icon">
                     </div>
                 </div>
-                <div class="bottom" id="weather-slot-container">
-                
-                </div>
+                <div class="bottom" id="weather-slot-container"></div>
             </div>
             {% endif %}
             <div id="notifications"></div>

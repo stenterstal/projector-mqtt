@@ -34,6 +34,12 @@ h1 {
     letter-spacing: 1px;
 }
 
+.widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 /* Weather Widget */
 
 #weather-widget {
@@ -48,8 +54,8 @@ h1 {
 #weather-widget .top {
     display: flex;
     flex-direction: column;
-    margin: -6px 8px -6px 0;
-    padding-left: 4px;
+    margin: -6px 0 -6px 8px;
+    padding-left: 6px;
 }
 
 #weather-widget .main-weather {
@@ -59,7 +65,7 @@ h1 {
     align-items: center;
     justify-content: center;
     margin-top: -18px;
-    margin-left: -12px;
+    margin-right: -12px;
 }
 
 #weather-widget #main-weather-icon {
@@ -125,12 +131,21 @@ h1 {
 
 /* Other Widgets */
 
+#notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
 .notification {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    background-color: #444;
+    padding: 8px;
+    border-radius: 16px;
     .icon-container {
         display: flex;
+        margin-left: 16px;
         gap: 8px;
         svg {
             width: 24px;
