@@ -9,23 +9,25 @@
 <body>
     <div class="h-100 d-flex flex-column align-items-center">
         <h1 id="time">Time</h1>
-        {% if environment.weather_enabled %}
-        <div id="weather-widget">
-            <div class="top">
-                <div class="main-weather">
-                    <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}" id="main-weather-icon">
-                    <p id="daily_temp">23° <span>18°</span></p>
+        <div class="widgets">
+            {% if environment.weather_enabled %}
+            <div id="weather-widget">
+                <div class="top">
+                    <div id="weather-description">
+                        <p id="weather-description-text">RAINY</p>
+                    </div>
+                    <div class="main-weather">
+                        <img src="{{ url_for('static',filename='svg/extreme-day.svg') }}" id="main-weather-icon">
+                        <p id="daily_temp">23° <span>18°</span></p>
+                    </div>
                 </div>
-                <div id="weather-description">
-                    <p id="weather-description-text">RAINY</p>
+                <div class="bottom" id="weather-slot-container">
+                
                 </div>
             </div>
-            <div class="bottom" id="weather-slot-container">
-            
-            </div>
+            {% endif %}
+            <div id="notifications"></div>
         </div>
-        {% endif %}
-        <div id="notifications"></div>
     </div>
 
     <!-- Script load order matters! -->

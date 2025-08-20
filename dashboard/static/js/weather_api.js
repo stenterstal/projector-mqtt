@@ -182,16 +182,16 @@ function getWeatherIcon(wmo_code){
 }
 
 function getWeatherDisplayName(code) {
-  if (code === 0) return "Helder";
-  if (code === 1 || code === 2) return "Soms bewolkt";
-  if (code === 3) return "Bewolkt";
-  if ((code >= 10 && code <= 12) || (code >= 40 && code <= 49)) return "Mist";
-  if ((code >= 13 && code <= 17) || (code >= 50 && code <= 59)) return "Motregen";
-  if ((code >= 18 && code <= 20) || (code >= 60 && code <= 69)) return "Regen";
-  if ((code >= 21 && code <= 24) || (code >= 70 && code <= 79)) return "Sneeuw";
-  if (code >= 25 && code <= 27) return "IJzel";
-  if ((code >= 28 && code <= 29) || (code >= 80 && code <= 84)) return "Buien";
-  if ((code >= 30 && code <= 35) || (code >= 85 && code <= 99)) return "Onweer";
+    if (code === 0) return "Helder";
+    if (code === 1 || code === 2) return "Soms bewolkt";
+    if (code === 3) return "Bewolkt";
+    if ((code >= 10 && code <= 12) || (code >= 40 && code <= 49)) return "Mist";
+    if ((code >= 13 && code <= 17) || (code >= 50 && code <= 59)) return "Motregen";
+    if ((code >= 18 && code <= 20) || (code >= 60 && code <= 69)) return "Regen";
+    if ((code >= 21 && code <= 24) || (code >= 70 && code <= 79)) return "Sneeuw";
+    if (code >= 25 && code <= 27) return "IJzel";
+    if ((code >= 28 && code <= 29) || (code >= 80 && code <= 84)) return "Buien";
+    if ((code >= 30 && code <= 35) || (code >= 85 && code <= 99)) return "Onweer";
 
-  return "Onbekend";
+    return "Onbekend";
 }

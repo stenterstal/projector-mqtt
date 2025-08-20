@@ -41,12 +41,15 @@ h1 {
     padding: 6px;
     border-radius: 16px;
     font-family: 'Open Sans', sans-serif;
-    width: 480px;
+    /* width: 480px; */
+    display: flex;
 }
 
 #weather-widget .top {
     display: flex;
-    margin: -6px 0 -6px 0;
+    flex-direction: column;
+    margin: -6px 8px -6px 0;
+    padding-left: 4px;
 }
 
 #weather-widget .main-weather {
@@ -54,6 +57,9 @@ h1 {
     flex: 1;
     text-align: center;
     align-items: center;
+    justify-content: center;
+    margin-top: -18px;
+    margin-left: -12px;
 }
 
 #weather-widget #main-weather-icon {
@@ -77,7 +83,10 @@ h1 {
 #weather-widget #weather-description {
     display: flex;
     align-items: center;
-    margin-right: 12px;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 0 16px 0 16px;
+    /* margin-right: 12px; */
 }
 
 #weather-widget #weather-description p {
@@ -89,6 +98,7 @@ h1 {
 #weather-widget .bottom {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #weather-widget .slot {
