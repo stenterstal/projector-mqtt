@@ -38,8 +38,6 @@ class ConfigFileChangedHandler(FileSystemEventHandler):
         # Don't listen on directory
         if event.is_directory:
             return
-        
-        print(event)
 
         if event.src_path == os.path.join(self.root_dir, 'config.ini'):
             self.conf_log.info('config.ini was edited')
