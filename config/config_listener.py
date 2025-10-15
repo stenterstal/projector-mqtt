@@ -19,7 +19,7 @@ class ConfigListener:
 
         observer = Observer()
         # Listen to the root dir, config.ini might not exist yet
-        observer.schedule(ConfigFileChangedHandler(), self.path, recursive=False)
+        observer.schedule(ConfigFileChangedHandler(root_dir), self.path, recursive=False)
         observer.start()
         try:
             self.conf_log.info(f"Watching for changes...")
@@ -30,24 +30,16 @@ class ConfigListener:
         observer.join()
 
 class ConfigFileChangedHandler(FileSystemEventHandler):
-    def __init__(self):
-        self.last_modified = 0
-        self.debounce_time = 3
+    def __init__(self, root_dir):
         self.conf_log = Logger(LogPrefix.conf)
+        self.root_dir = root_dir
 
     def on_modified(self, event) -> None:
         # Don't listen on directory
         if event.is_directory:
             return
 
-        # Ignore if the event occurred too soon after the last one
-        current_time = time.time()
-        if current_time - self.last_modified < self.debounce_time:
-            return
-
-        from app import ROOT_DIR
-        if event.src_path == os.path.join(ROOT_DIR, 'config.ini'):
-            self.last_modified = current_time
+        if event.src_path == os.path.join(self.root_dir, 'config.ini'):
             self.conf_log.info('config.ini was edited')
 
             config_errors = validate_config()
