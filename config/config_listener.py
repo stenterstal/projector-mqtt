@@ -46,3 +46,7 @@ class ConfigFileChangedHandler(FileSystemEventHandler):
             if len(config_errors) == 0:
                 self.conf_log.info('config.ini has all required fields, reloading display...')
                 subprocess.run(["/usr/bin/sudo", "xdotool", "key", "ctrl+r"])
+            else:
+                self.conf_log.error("Found {} errors in config".format(len(config_errors)))
+                for error in config_errors:
+                    self.conf_log.error(error)
