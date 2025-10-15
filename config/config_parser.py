@@ -11,7 +11,9 @@ def write_config(section: str, data: dict):
 
     config[section] = data
 
-    config.write(io.open(os.path.join(ROOT_DIR, 'config.ini'), 'w'))
+    with io.open(os.path.join(ROOT_DIR, 'config.ini'), 'w') as configfile:
+        config.write(configfile)
+        configfile.flush()
 
 
 def read_config():
