@@ -1,5 +1,7 @@
 import os
+import subprocess
 import time
+import threading
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
@@ -8,13 +10,30 @@ from config.config_parser import validate_config
 from log import Logger, LogPrefix
 from projector.projector import Projector
 
+# from app import ROOT_DIR
 
-class DynamicProjectorStarter(FileSystemEventHandler):
+class ConfigListener:
+    def __init__(self, root_dir):
+        self.path = os.path.join(root_dir)
+        self.conf_log = Logger(LogPrefix.conf)
+
+        observer = Observer()
+        # Listen to the root dir, config.ini might not exist yet
+        observer.schedule(ConfigFileChangedHandler(), self.path, recursive=False)
+        observer.start()
+        try:
+            self.conf_log.info(f"Watching for changes...")
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            observer.stop()
+        observer.join()
+
+class ConfigFileChangedHandler(FileSystemEventHandler):
     def __init__(self):
         self.last_modified = 0
-        self.debounce_time = 0.5
+        self.debounce_time = 3
         self.conf_log = Logger(LogPrefix.conf)
-        self.projector = Projector()
 
     def on_modified(self, event) -> None:
         # Don't listen on directory
@@ -27,28 +46,11 @@ class DynamicProjectorStarter(FileSystemEventHandler):
             return
 
         from app import ROOT_DIR
-
         if event.src_path == os.path.join(ROOT_DIR, 'config.ini'):
             self.last_modified = current_time
             self.conf_log.info('config.ini was edited')
 
             config_errors = validate_config()
             if len(config_errors) == 0:
-                self.conf_log.info('config.ini has all required fields, starting projector...')
-                # Only start projector if all fields are present
-                self.projector = Projector()
-
-
-def DynamicProjectorLoop():
-    from app import ROOT_DIR
-    event_handler = DynamicProjectorStarter()
-    observer = Observer()
-    # Listen to the root dir, config.ini might not exist yet
-    observer.schedule(event_handler, os.path.join(ROOT_DIR), recursive=False)
-    observer.start()
-    try:
-        while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
-        observer.stop()
-    observer.join()
+                self.conf_log.info('config.ini has all required fields, reloading display...')
+                subprocess.run(["/usr/bin/sudo", "xdotool", "key", "ctrl+r"])
